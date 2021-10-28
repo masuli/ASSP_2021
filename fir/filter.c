@@ -9,12 +9,19 @@ void fir_filter() {
 	int d1 = 0;
 	int d2 = 0;
 	int d3 = 0;
-	int input_sample;
-	int filtered_sample;
+	int input_sample_1;
+	int input_sample_2;
+	int filtered_sample_1;
+	int filtered_sample_2;
 	int status = 1;
 
 	while (status > 0) {
-		_TCE_FIFO_U8_STREAM_IN(0, input_sample, status);
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_1, status);
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_2, status);
+		_TCE_SIMDFIR(input_sample_1, input_sample_2, d0, d1, d2, d3, filtered_sample_1, filtered_sample_2, d0, d1, d2, d3);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_1);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_2);
+		/*_TCE_FIFO_U8_STREAM_IN(0, input_sample, status);
 
 		d0 = d1;
 		d1 = d2;
@@ -22,34 +29,7 @@ void fir_filter() {
 		d3 = input_sample - x;
 
 		filtered_sample = d0 * k0 + d1 * k1 + d2 * k2 + d3 * k3;
-		_TCE_FIFO_U8_STREAM_OUT((filtered_sample >> 8) + x);
-		_TCE_FIFO_U8_STREAM_IN(0, input_sample, status);
-
-		d0 = d1;
-		d1 = d2;
-		d2 = d3;
-		d3 = input_sample - x;
-
-		filtered_sample = d0 * k0 + d1 * k1 + d2 * k2 + d3 * k3;
-		_TCE_FIFO_U8_STREAM_OUT((filtered_sample >> 8) + x);
-		_TCE_FIFO_U8_STREAM_IN(0, input_sample, status);
-
-		d0 = d1;
-		d1 = d2;
-		d2 = d3;
-		d3 = input_sample - x;
-
-		filtered_sample = d0 * k0 + d1 * k1 + d2 * k2 + d3 * k3;
-		_TCE_FIFO_U8_STREAM_OUT((filtered_sample >> 8) + x);
-		_TCE_FIFO_U8_STREAM_IN(0, input_sample, status);
-
-		d0 = d1;
-		d1 = d2;
-		d2 = d3;
-		d3 = input_sample - x;
-
-		filtered_sample = d0 * k0 + d1 * k1 + d2 * k2 + d3 * k3;
-		_TCE_FIFO_U8_STREAM_OUT((filtered_sample >> 8) + x);
+		_TCE_FIFO_U8_STREAM_OUT((filtered_sample >> 8) + x);*/
 	}
 }
 

@@ -1,0 +1,2 @@
+tcecc -O3 -o fir.tpef filter4.c -a processor_custom_4.adf --unroll-threshold=10000 --inline-threshold=10000
+proxim processor_custom_4.adf fir.tpef
