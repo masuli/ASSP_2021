@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<adf-implementation>
+
+  <ic-decoder-plugin>
+    <name>DefaultICDecoder</name>
+    <file>/usr/local/share/tce/icdecoder_plugins/DefaultICDecoderPlugin.so</file>
+  </ic-decoder-plugin>
+
+  <fu name="AUDIO_CODEC">
+    <hdb-file>de2_modules.hdb</hdb-file>
+    <fu-id>1</fu-id>
+  </fu>
+
+  <fu name="I2C_MASTER">
+    <hdb-file>de2_modules.hdb</hdb-file>
+    <fu-id>2</fu-id>
+  </fu>
+
+  <fu name="ALU">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>375</fu-id>
+  </fu>
+
+  <fu name="LSU">
+    <hdb-file>/usr/local/share/tce/hdb/stratixII.hdb</hdb-file>
+    <fu-id>2</fu-id>
+  </fu>
+
+  <fu name="mul">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>88</fu-id>
+  </fu>
+
+  <fu name="mul_1">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>88</fu-id>
+  </fu>
+
+  <rf name="RF">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <rf-id>958</rf-id>
+  </rf>
+
+  <rf name="BOOL">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <rf-id>96</rf-id>
+  </rf>
+
+  <rf name="RF_1">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <rf-id>958</rf-id>
+  </rf>
+
+  <rf name="RF_2">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <rf-id>958</rf-id>
+  </rf>
+
+</adf-implementation>

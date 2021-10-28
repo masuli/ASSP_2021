@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<osal version="0.1">
+
+  <operation>
+    <name>I2C_WRITE</name>
+    <description/>
+    <inputs>1</inputs>
+    <outputs>0</outputs>
+    <side-effects/>
+    <affects>
+      <operation name="I2C_STATUS"/>
+    </affects>
+    <in id="1" type="SIntWord"/>
+  </operation>
+
+  <operation>
+    <name>I2C_STATUS</name>
+    <description/>
+    <inputs>1</inputs>
+    <outputs>1</outputs>
+    <side-effects/>
+    <affected-by>
+      <operation name="I2C_WRITE"/>
+    </affected-by>
+    <in id="1" type="SIntWord"/>
+    <out id="2" type="SIntWord"/>
+  </operation>
+
+</osal>

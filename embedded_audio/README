@@ -1,0 +1,107 @@
+
+WOLFSON WM8731 AUDIO CODEC TTA INTERFACE 
+README FILE
+Created 25.2.2013
+Updated 5.5.2014
+
+
+-----PACKAGE CONTENTS-----
+
+data/           -- opp, obp and cc files for audio codec TTA interface function units
+                -- NOTE: cc files are empty so there is no c++ descriptions of audio codec TTA FUs -->
+                   ttasim won't work.
+
+documentation/  -- connections.png provides example connections to show 
+                   how TTA processor is connected to the AUDIO CODEC
+                
+                -- audio_interface.pdf provides additional information about AUDIO_INTERFACE
+                   hardware blocks, if you want make own TTA FU to interface audio codec.
+                   
+                -- WM8731L.pdf is datasheet of Wolfson WM8731 / WM8731L audio codec which is used in 
+                   DE2 FPGA board. There is information about different audio codec settings which 
+                   can be configured over I2C.
+                   
+processors/     -- processor aud.adf and aud.idf, which is used in example project.
+
+program/        -- program.c is example program. The program show how tta audio codec interface FUs
+                   is supposed to use. Program read values from 'audio in' and filter samples using
+                   combfilter (notches in multiples of 1 KHz) and write processed samples to 'audio out'.
+                   
+vhdl/           -- AUDIO_INTERFACE.vhd is block which convert serial bit transmission of the audio codec circuit to
+                   parallel 16 bit samples and convert parallel bit transmission of AUD_TTA_FU to serial bit
+                   transmission 
+                
+                -- CLOCK_GENERATOR.vhd generate 12.288 MHz, 1.536 MHz, 48 KHz and 8 KHz clock signals
+                   needed by the Audio codec circuit and AUDIO_INTERFACE block.
+                   
+                -- frac[X].vhd is needed to create symbol files and synthesis of CLOCK_GENERATOR.vhdl
+                
+                -- I2C_INTERFACE.vhd is vhdl description of I2C master controller (write only).
+                
+                -- AUD_TTA_FU.vhdl is TTA FU which interfaces the audio codec circuit
+                   trough AUDIO_INTERFACE block. Read 16-bit samples from AUDIO_INTERFACE and write
+                   16-bit samples back to AUDIO_INTERFACE.
+                   
+                -- I2C_TTA_FU.vhdl is used to configure the audio codec circuit through I2C_INTERFACE block.
+                
+createDesign.sh -- script which generates vhdl description of tta processor and memory images.
+                   If you want use script modify lines 2-9 to fit your design.
+                   
+de2_modules.hdb -- hardware database of TTA audio codec interface FUs
+
+Pizzicato_48KHz_Noise_1000Hz.mp3 
+                
+                -- MP3 music file with 1000 Hz noise signal added.
+                   Original file: http://www.jamendo.com/en/list/a32/cd-kdo-pyleft# (Creative Commons lisence)
+                   
+
+----- AUDIO CODEC TTA INTERFACE INSTRUCTIONS -----
+
+_TCE_I2C_WRITE(int conf)                            Writes 24 bit lenght I2C setup bit sequence to the audio codec 
+
+_TCE_I2C_STATUS(0,volatile unsigned char lock)      Returns state of I2C transmission to the 
+                                                    (volatile unsigned char) lock variable
+                                                    1 if success, 0 if not ready or failure. 
+
+_TCE_AUD_READ_L(0,short sampleInL)                  Read 16-bit left channel audio sample from audio in to the (short) sampleInL
+
+_TCE_AUD_READ_R(0,short sampleInR)                  Read 16-bit right channel audio sample from audio in to the (short) sampleInR
+
+_TCE_AUD_WRITE_L(short sampleOutL)                  Write 16-bit left channel audio sample to audio out from the (short) sampleOutL
+
+_TCE_AUD_WRITE_R(short sampleOutR)                  Write 16-bit right channel audio sample to audio out from the (short) sampleOutr
+
+_TCE_AUD_STATUS(0,volatile short sampleReady)       Check if there is new samples arrived for reading. Returns 0 if there is no new samples
+                                                    and 1 if there is new samples.
+                                                    
+NOTE: To learn how these funtions is to be used, take a look to the example program: AUDIO_CODEC/program/program.c.  
+
+ 
+
+----- STEP BY STEP GUIDE: Realtime audio processing using TTA-processor -----
+
+1.Go to AUDIO_CODEC directory.
+2.Run createDesign.sh using command: sh createDesign.sh
+3.Open Quartus II and create new project.
+4.Add all files from AUDIO_CODEC/output/ directory (result of createDesign.sh script) to the quartus project.
+5.Add all following files from AUDIO_CODEC/vhdl/ directory to the quartus project:
+  AUDIO_INTERFACE.vhd, CLOCK_GENERATOR.vhd, frac8.vhd, frac48.vhd, frac1536.vhd, frac12288.vhd and I2C_INTERFACE.vhd  
+6.Create symbol files for p1_aud.vhdl, AUDIO_INTERFACE.vhd, I2C_INTERFACE.vhd, CLOCK_GENERATOR.vhd.
+7.Create rom and ram memories which fits to processor's mem inputs and outputs.
+  Use images located in AUDIO_CODEC/mem_images/ (result of createDesign.sh script)
+8.Connect blocks as is shown in image connections.png. 
+  Also, you have to create couple of input pins, output pins and etc.
+  Use same names of pins as in connections.png.
+  NOTE: I2C_SDAT is BIDIRECTIONAL PIN
+9.Assing input and output pins  (check correct audio codec circuit pins from DE2 manual)
+ - If you want, you can use the audio_tta.qsf -file in your project to get all the pin assignments for the 
+   DE2-115 board
+10. Start compilation
+11. Use Programmer to write design to FPGA
+12. Upload Pizzicato_48KHz_Noise_1000Hz.mp3 to a MP3 player and listen the mp3 file, you should hear 1000Hz noise signal.
+13. Connect MP3 player to FPGA board's Line In (blue connector) and plug headphones in 
+    to the Line Out (green connector).
+14. Play Pizzicato_48KHz_Noise_1000Hz.mp3 and ENJOY!
+
+
+
