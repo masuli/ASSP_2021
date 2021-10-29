@@ -59,7 +59,22 @@ void fir_filter() {
 		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_2);
 		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_3);
 		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_4);
+
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_1, status);
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_2, status);
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_3, status);
+		_TCE_FIFO_U8_STREAM_IN(0, input_sample_4, status);
+		_TCE_SIMDFIR4(input_sample_1, input_sample_2, input_sample_3, input_sample_4, d0, d1, d2, d3, filtered_sample_1, filtered_sample_2, filtered_sample_3, filtered_sample_4, d0, d1, d2, d3);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_1);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_2);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_3);
+		_TCE_FIFO_U8_STREAM_OUT(filtered_sample_4);
 	}
+	_TCE_SIMDFIR4(0, 0, 0, 0, d0, d1, d2, d3, filtered_sample_1, filtered_sample_2, filtered_sample_3, filtered_sample_4, d0, d1, d2, d3);
+	_TCE_FIFO_U8_STREAM_OUT(filtered_sample_1);
+	_TCE_FIFO_U8_STREAM_OUT(filtered_sample_2);
+	_TCE_FIFO_U8_STREAM_OUT(filtered_sample_3);
+	_TCE_FIFO_U8_STREAM_OUT(filtered_sample_4);	
 }
 
 void copy_header(int size) {
