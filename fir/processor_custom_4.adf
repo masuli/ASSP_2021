@@ -698,120 +698,6 @@
     </reads-from>
   </socket>
 
-  <socket name="RF_2_3_o1">
-    <writes-to>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </writes-to>
-  </socket>
-
-  <socket name="RF_2_3_i1">
-    <reads-from>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </reads-from>
-  </socket>
-
-  <socket name="RF_2_4_o1">
-    <writes-to>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </writes-to>
-  </socket>
-
-  <socket name="RF_2_4_i1">
-    <reads-from>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </reads-from>
-  </socket>
-
-  <socket name="RF_2_1_o2">
-    <writes-to>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </writes-to>
-    <writes-to>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </writes-to>
-  </socket>
-
-  <socket name="RF_2_1_i2">
-    <reads-from>
-      <bus>B1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_1</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_2</bus>
-      <segment>seg1</segment>
-    </reads-from>
-    <reads-from>
-      <bus>B1_3</bus>
-      <segment>seg1</segment>
-    </reads-from>
-  </socket>
-
   <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_i2">
     <reads-from>
       <bus>B1</bus>
@@ -1209,6 +1095,44 @@
       <bus>B1_3</bus>
       <segment>seg1</segment>
     </writes-to>
+  </socket>
+
+  <socket name="RF_4_1_o1">
+    <writes-to>
+      <bus>B1</bus>
+      <segment>seg1</segment>
+    </writes-to>
+    <writes-to>
+      <bus>B1_1</bus>
+      <segment>seg1</segment>
+    </writes-to>
+    <writes-to>
+      <bus>B1_2</bus>
+      <segment>seg1</segment>
+    </writes-to>
+    <writes-to>
+      <bus>B1_3</bus>
+      <segment>seg1</segment>
+    </writes-to>
+  </socket>
+
+  <socket name="RF_4_1_i1">
+    <reads-from>
+      <bus>B1</bus>
+      <segment>seg1</segment>
+    </reads-from>
+    <reads-from>
+      <bus>B1_1</bus>
+      <segment>seg1</segment>
+    </reads-from>
+    <reads-from>
+      <bus>B1_2</bus>
+      <segment>seg1</segment>
+    </reads-from>
+    <reads-from>
+      <bus>B1_3</bus>
+      <segment>seg1</segment>
+    </reads-from>
   </socket>
 
   <function-unit name="LSU">
@@ -2116,38 +2040,10 @@
     <max-reads>1</max-reads>
     <max-writes>1</max-writes>
     <port name="wr">
-      <connects-to>RF_2_3_o1</connects-to>
+      <connects-to>RF_4_1_o1</connects-to>
     </port>
     <port name="rd">
-      <connects-to>RF_2_3_i1</connects-to>
-    </port>
-  </register-file>
-
-  <register-file name="RF_6">
-    <type>normal</type>
-    <size>5</size>
-    <width>32</width>
-    <max-reads>1</max-reads>
-    <max-writes>1</max-writes>
-    <port name="wr">
-      <connects-to>RF_2_4_o1</connects-to>
-    </port>
-    <port name="rd">
-      <connects-to>RF_2_4_i1</connects-to>
-    </port>
-  </register-file>
-
-  <register-file name="RF_7">
-    <type>normal</type>
-    <size>5</size>
-    <width>32</width>
-    <max-reads>1</max-reads>
-    <max-writes>1</max-writes>
-    <port name="wr">
-      <connects-to>RF_2_1_o2</connects-to>
-    </port>
-    <port name="rd">
-      <connects-to>RF_2_1_i2</connects-to>
+      <connects-to>RF_4_1_i1</connects-to>
     </port>
   </register-file>
 
