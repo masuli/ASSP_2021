@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="tta">
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|dataram:inst1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_t7t3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_c5j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|stream_source_1:inst7|tiny_fifo:inst1|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_6i61.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0" CBX_FILE_NAME="mult_r4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|instrom:inst2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_otr3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_4uf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_nt14.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_8fi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_p1j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_lrc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_hfi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tta|stream_source_1:inst7|data_src1:inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_sta1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
