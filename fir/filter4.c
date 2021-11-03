@@ -1,9 +1,3 @@
-#define k0 37
-#define k1 109
-#define k2 109
-#define k3 37
-#define x 128
-
 void fir_filter() {
 	int d0 = 0;
 	int d1 = 0;
