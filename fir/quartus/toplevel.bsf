@@ -47,8 +47,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "imem_data[331..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "imem_data[331..0]" (rect 21 75 94 87)(font "Arial" ))
+		(text "imem_data[327..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "imem_data[327..0]" (rect 21 75 95 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
@@ -68,22 +68,22 @@ applicable agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-		(text "fu_OUTPUT_ext_status[7..0]" (rect 0 0 120 12)(font "Arial" ))
-		(text "fu_OUTPUT_ext_status[7..0]" (rect 21 123 141 135)(font "Arial" ))
+		(text "fu_INPUT_ext_data[7..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "fu_INPUT_ext_data[7..0]" (rect 21 123 123 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 0 144)
 		(input)
-		(text "fu_INPUT_ext_data[7..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "fu_INPUT_ext_data[7..0]" (rect 21 139 123 151)(font "Arial" ))
+		(text "fu_INPUT_ext_status[7..0]" (rect 0 0 109 12)(font "Arial" ))
+		(text "fu_INPUT_ext_status[7..0]" (rect 21 139 130 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "fu_INPUT_ext_status[7..0]" (rect 0 0 109 12)(font "Arial" ))
-		(text "fu_INPUT_ext_status[7..0]" (rect 21 155 130 167)(font "Arial" ))
+		(text "fu_OUTPUT_ext_status[7..0]" (rect 0 0 120 12)(font "Arial" ))
+		(text "fu_OUTPUT_ext_status[7..0]" (rect 21 155 141 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
@@ -138,22 +138,22 @@ applicable agreement for further details.
 	(port
 		(pt 360 144)
 		(output)
-		(text "fu_OUTPUT_ext_data[7..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "fu_OUTPUT_ext_data[7..0]" (rect 226 139 339 151)(font "Arial" ))
+		(text "fu_INPUT_ext_rdack[0..0]" (rect 0 0 108 12)(font "Arial" ))
+		(text "fu_INPUT_ext_rdack[0..0]" (rect 231 139 339 151)(font "Arial" ))
 		(line (pt 360 144)(pt 344 144)(line_width 3))
 	)
 	(port
 		(pt 360 160)
 		(output)
-		(text "fu_OUTPUT_ext_dv[0..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "fu_OUTPUT_ext_dv[0..0]" (rect 232 155 339 167)(font "Arial" ))
+		(text "fu_OUTPUT_ext_data[7..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "fu_OUTPUT_ext_data[7..0]" (rect 226 155 339 167)(font "Arial" ))
 		(line (pt 360 160)(pt 344 160)(line_width 3))
 	)
 	(port
 		(pt 360 176)
 		(output)
-		(text "fu_INPUT_ext_rdack[0..0]" (rect 0 0 108 12)(font "Arial" ))
-		(text "fu_INPUT_ext_rdack[0..0]" (rect 231 171 339 183)(font "Arial" ))
+		(text "fu_OUTPUT_ext_dv[0..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "fu_OUTPUT_ext_dv[0..0]" (rect 232 171 339 183)(font "Arial" ))
 		(line (pt 360 176)(pt 344 176)(line_width 3))
 	)
 	(drawing

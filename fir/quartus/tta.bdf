@@ -34,6 +34,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 157 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -72 216 -16 232))
 )
 (pin
 	(input)
@@ -50,6 +51,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 157 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -72 232 -16 248))
 )
 (pin
 	(output)
@@ -66,6 +68,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1376 272 1440 288))
 )
 (symbol
 	(rect 848 472 896 504)
@@ -214,12 +217,12 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(output)
-		(text "q[331..0]" (rect 0 0 50 13)(font "Arial" (font_size 8)))
-		(text "q[331..0]" (rect -6 19 44 32)(font "Arial" (font_size 8)))
+		(text "q[327..0]" (rect 0 0 50 13)(font "Arial" (font_size 8)))
+		(text "q[327..0]" (rect -6 19 44 32)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 80 32)(line_width 3))
 	)
 	(drawing
-		(text "332 bits" (rect 95 18 106 58)(font "Arial" )(vertical))
+		(text "328 bits" (rect 95 18 106 58)(font "Arial" )(vertical))
 		(text "256 words" (rect 85 8 96 59)(font "Arial" )(vertical))
 		(text "Block type: AUTO" (rect 79 115 168 126)(font "Arial" ))
 		(line (pt 112 24)(pt 80 24))
@@ -276,8 +279,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "imem_data[331..0]" (rect 0 0 92 11)(font "Arial" ))
-		(text "imem_data[331..0]" (rect 21 75 113 86)(font "Arial" ))
+		(text "imem_data[327..0]" (rect 0 0 92 11)(font "Arial" ))
+		(text "imem_data[327..0]" (rect 21 75 113 86)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
@@ -297,22 +300,22 @@ applicable agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-		(text "fu_OUTPUT_ext_status[7..0]" (rect 0 0 141 11)(font "Arial" ))
-		(text "fu_OUTPUT_ext_status[7..0]" (rect 21 123 162 134)(font "Arial" ))
+		(text "fu_INPUT_ext_data[7..0]" (rect 0 0 121 11)(font "Arial" ))
+		(text "fu_INPUT_ext_data[7..0]" (rect 21 123 142 134)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 0 144)
 		(input)
-		(text "fu_INPUT_ext_data[7..0]" (rect 0 0 121 11)(font "Arial" ))
-		(text "fu_INPUT_ext_data[7..0]" (rect 21 139 142 150)(font "Arial" ))
+		(text "fu_INPUT_ext_status[7..0]" (rect 0 0 129 11)(font "Arial" ))
+		(text "fu_INPUT_ext_status[7..0]" (rect 21 139 150 150)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "fu_INPUT_ext_status[7..0]" (rect 0 0 129 11)(font "Arial" ))
-		(text "fu_INPUT_ext_status[7..0]" (rect 21 155 150 166)(font "Arial" ))
+		(text "fu_OUTPUT_ext_status[7..0]" (rect 0 0 141 11)(font "Arial" ))
+		(text "fu_OUTPUT_ext_status[7..0]" (rect 21 155 162 166)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
@@ -367,22 +370,22 @@ applicable agreement for further details.
 	(port
 		(pt 360 144)
 		(output)
-		(text "fu_OUTPUT_ext_data[7..0]" (rect 0 0 133 11)(font "Arial" ))
-		(text "fu_OUTPUT_ext_data[7..0]" (rect 227 139 339 150)(font "Arial" ))
+		(text "fu_INPUT_ext_rdack[0..0]" (rect 0 0 127 11)(font "Arial" ))
+		(text "fu_INPUT_ext_rdack[0..0]" (rect 232 139 339 150)(font "Arial" ))
 		(line (pt 360 144)(pt 344 144)(line_width 3))
 	)
 	(port
 		(pt 360 160)
 		(output)
-		(text "fu_OUTPUT_ext_dv[0..0]" (rect 0 0 123 11)(font "Arial" ))
-		(text "fu_OUTPUT_ext_dv[0..0]" (rect 235 155 339 166)(font "Arial" ))
+		(text "fu_OUTPUT_ext_data[7..0]" (rect 0 0 133 11)(font "Arial" ))
+		(text "fu_OUTPUT_ext_data[7..0]" (rect 227 155 339 166)(font "Arial" ))
 		(line (pt 360 160)(pt 344 160)(line_width 3))
 	)
 	(port
 		(pt 360 176)
 		(output)
-		(text "fu_INPUT_ext_rdack[0..0]" (rect 0 0 127 11)(font "Arial" ))
-		(text "fu_INPUT_ext_rdack[0..0]" (rect 232 171 339 182)(font "Arial" ))
+		(text "fu_OUTPUT_ext_dv[0..0]" (rect 0 0 123 11)(font "Arial" ))
+		(text "fu_OUTPUT_ext_dv[0..0]" (rect 235 171 339 182)(font "Arial" ))
 		(line (pt 360 176)(pt 344 176)(line_width 3))
 	)
 	(drawing
@@ -520,12 +523,6 @@ applicable agreement for further details.
 	(text "led_bus[3..0]" (rect 1122 248 1185 259)(font "Arial" ))
 	(pt 1200 264)
 	(pt 1112 264)
-	(bus)
-)
-(connector
-	(text "led_bus[7..0]" (rect 1026 304 1089 315)(font "Arial" ))
-	(pt 888 320)
-	(pt 1112 320)
 	(bus)
 )
 (connector
@@ -712,38 +709,8 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 504 88)
-	(pt 504 320)
-	(bus)
-)
-(connector
-	(pt 528 320)
-	(pt 504 320)
-	(bus)
-)
-(connector
 	(pt 392 120)
 	(pt 496 120)
-	(bus)
-)
-(connector
-	(pt 496 120)
-	(pt 496 336)
-	(bus)
-)
-(connector
-	(pt 528 336)
-	(pt 496 336)
-	(bus)
-)
-(connector
-	(pt 528 304)
-	(pt 520 304)
-	(bus)
-)
-(connector
-	(pt 520 304)
-	(pt 520 408)
 	(bus)
 )
 (connector
@@ -776,25 +743,7 @@ applicable agreement for further details.
 	(pt 984 480)
 )
 (connector
-	(pt 984 480)
-	(pt 984 336)
-)
-(connector
-	(pt 984 336)
-	(pt 888 336)
-)
-(connector
 	(pt 1144 496)
-	(pt 1112 496)
-	(bus)
-)
-(connector
-	(pt 1112 264)
-	(pt 1112 320)
-	(bus)
-)
-(connector
-	(pt 1112 320)
 	(pt 1112 496)
 	(bus)
 )
@@ -855,14 +804,6 @@ applicable agreement for further details.
 	(pt 912 48)
 )
 (connector
-	(pt 912 48)
-	(pt 912 352)
-)
-(connector
-	(pt 912 352)
-	(pt 888 352)
-)
-(connector
 	(pt 160 224)
 	(pt 232 224)
 )
@@ -878,11 +819,73 @@ applicable agreement for further details.
 	(pt 208 208)
 	(pt 344 208)
 )
+(connector
+	(pt 520 408)
+	(pt 520 336)
+	(bus)
+)
+(connector
+	(pt 528 336)
+	(pt 520 336)
+	(bus)
+)
+(connector
+	(pt 504 304)
+	(pt 504 88)
+	(bus)
+)
+(connector
+	(pt 504 304)
+	(pt 528 304)
+	(bus)
+)
+(connector
+	(pt 496 320)
+	(pt 496 120)
+	(bus)
+)
+(connector
+	(pt 496 320)
+	(pt 528 320)
+	(bus)
+)
+(connector
+	(pt 912 320)
+	(pt 912 48)
+)
+(connector
+	(pt 912 320)
+	(pt 888 320)
+)
+(connector
+	(pt 984 352)
+	(pt 984 480)
+)
+(connector
+	(pt 984 352)
+	(pt 888 352)
+)
+(connector
+	(pt 1112 264)
+	(pt 1112 336)
+	(bus)
+)
+(connector
+	(pt 1112 336)
+	(pt 1112 496)
+	(bus)
+)
+(connector
+	(text "led_bus[7..0]" (rect 1042 320 1105 331)(font "Arial" ))
+	(pt 888 336)
+	(pt 1112 336)
+	(bus)
+)
 (junction (pt 1112 264))
 (junction (pt 864 592))
 (junction (pt 344 208))
 (junction (pt 232 224))
 (junction (pt 208 208))
-(junction (pt 1112 320))
 (junction (pt 408 208))
 (junction (pt 424 224))
+(junction (pt 1112 336))

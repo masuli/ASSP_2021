@@ -44,24 +44,24 @@ ENTITY instrom IS
 	(
 		address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (331 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (327 DOWNTO 0)
 	);
 END instrom;
 
 
 ARCHITECTURE SYN OF instrom IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (331 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (327 DOWNTO 0);
 
 BEGIN
-	q    <= sub_wire0(331 DOWNTO 0);
+	q    <= sub_wire0(327 DOWNTO 0);
 
 	altsyncram_component : altsyncram
 	GENERIC MAP (
 		address_aclr_a => "NONE",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
-		init_file => "../../fir.mif",
+		init_file => "../fir.mif",
 		intended_device_family => "Cyclone III",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -70,7 +70,7 @@ BEGIN
 		outdata_aclr_a => "NONE",
 		outdata_reg_a => "UNREGISTERED",
 		widthad_a => 8,
-		width_a => 332,
+		width_a => 328,
 		width_byteena_a => 1
 	)
 	PORT MAP (
@@ -103,7 +103,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "../../fir.mif"
+-- Retrieval info: PRIVATE: MIFfilename STRING "../fir.mif"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "256"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: RegAddr NUMERIC "1"
@@ -112,13 +112,13 @@ END SYN;
 -- Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 -- Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
 -- Retrieval info: PRIVATE: WidthAddr NUMERIC "8"
--- Retrieval info: PRIVATE: WidthData NUMERIC "332"
+-- Retrieval info: PRIVATE: WidthData NUMERIC "328"
 -- Retrieval info: PRIVATE: rden NUMERIC "0"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
--- Retrieval info: CONSTANT: INIT_FILE STRING "../../fir.mif"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "../fir.mif"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -127,14 +127,14 @@ END SYN;
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
--- Retrieval info: CONSTANT: WIDTH_A NUMERIC "332"
+-- Retrieval info: CONSTANT: WIDTH_A NUMERIC "328"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 -- Retrieval info: USED_PORT: address 0 0 8 0 INPUT NODEFVAL "address[7..0]"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
--- Retrieval info: USED_PORT: q 0 0 332 0 OUTPUT NODEFVAL "q[331..0]"
+-- Retrieval info: USED_PORT: q 0 0 328 0 OUTPUT NODEFVAL "q[327..0]"
 -- Retrieval info: CONNECT: @address_a 0 0 8 0 address 0 0 8 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 332 0 @q_a 0 0 332 0
+-- Retrieval info: CONNECT: q 0 0 328 0 @q_a 0 0 328 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL instrom.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL instrom.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL instrom.cmp TRUE

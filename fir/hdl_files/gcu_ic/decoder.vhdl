@@ -34,10 +34,10 @@ entity toplevel_decoder is
     socket_lsu_i1_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_lsu_o1_bus_cntrl : out std_logic_vector(7 downto 0);
     socket_lsu_i2_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_RF_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_RF_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_bool_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_bool_o1_bus_cntrl : out std_logic_vector(7 downto 0);
+    socket_RF_i1_bus_cntrl : out std_logic_vector(1 downto 0);
+    socket_RF_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_bool_i1_bus_cntrl : out std_logic_vector(1 downto 0);
+    socket_bool_o1_bus_cntrl : out std_logic_vector(3 downto 0);
     socket_gcu_i1_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_gcu_i2_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_gcu_o1_bus_cntrl : out std_logic_vector(7 downto 0);
@@ -50,27 +50,27 @@ entity toplevel_decoder is
     socket_MUL_i1_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_MUL_i2_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_MUL_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_0_1_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_0_1_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_RF_0_2_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_0_2_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_RF_2_1_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_2_1_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_RF_2_2_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_2_2_i1_bus_cntrl : out std_logic_vector(2 downto 0);
+    socket_RF_0_1_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_RF_0_1_i1_bus_cntrl : out std_logic_vector(1 downto 0);
+    socket_RF_0_2_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_RF_0_2_i1_bus_cntrl : out std_logic_vector(1 downto 0);
+    socket_RF_2_1_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_RF_2_1_i1_bus_cntrl : out std_logic_vector(1 downto 0);
+    socket_RF_2_2_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_RF_2_2_i1_bus_cntrl : out std_logic_vector(1 downto 0);
     socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl : out std_logic_vector(7 downto 0);
     socket_INPUT_i1_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_INPUT_o1_bus_cntrl : out std_logic_vector(7 downto 0);
     socket_INPUT_o2_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_5_o1_bus_cntrl : out std_logic_vector(7 downto 0);
-    socket_RF_5_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_ADDSH_1_i1_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_ADDSH_1_i2_bus_cntrl : out std_logic_vector(2 downto 0);
-    socket_ADDSH_1_o1_bus_cntrl : out std_logic_vector(7 downto 0);
+    socket_RF_5_o1_bus_cntrl : out std_logic_vector(3 downto 0);
+    socket_RF_5_i1_bus_cntrl : out std_logic_vector(1 downto 0);
     socket_MUL_1_i1_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_MUL_1_i2_bus_cntrl : out std_logic_vector(2 downto 0);
     socket_MUL_1_o1_bus_cntrl : out std_logic_vector(7 downto 0);
+    socket_ADDSH_1_i3_bus_cntrl : out std_logic_vector(2 downto 0);
+    socket_ADDSH_1_i4_bus_cntrl : out std_logic_vector(2 downto 0);
+    socket_ADDSH_1_o2_bus_cntrl : out std_logic_vector(7 downto 0);
     fu_LSU_in1t_load : out std_logic;
     fu_LSU_in2_load : out std_logic;
     fu_LSU_opc : out std_logic_vector(2 downto 0);
@@ -86,11 +86,11 @@ entity toplevel_decoder is
     fu_OUTPUT_opc : out std_logic_vector(0 downto 0);
     fu_INPUT_in1t_load : out std_logic;
     fu_INPUT_opc : out std_logic_vector(0 downto 0);
+    fu_MUL_1_in1t_load : out std_logic;
+    fu_MUL_1_in2_load : out std_logic;
     fu_ADDSH_1_in1t_load : out std_logic;
     fu_ADDSH_1_in2_load : out std_logic;
     fu_ADDSH_1_opc : out std_logic_vector(2 downto 0);
-    fu_MUL_1_in1t_load : out std_logic;
-    fu_MUL_1_in2_load : out std_logic;
     rf_RF_0_wr_load : out std_logic;
     rf_RF_0_wr_opc : out std_logic_vector(2 downto 0);
     rf_RF_0_rd_load : out std_logic;
@@ -129,10 +129,10 @@ architecture rtl_andor of toplevel_decoder is
 
   -- signals for source, destination and guard fields
   signal src_B1 : std_logic_vector(32 downto 0);
-  signal dst_B1 : std_logic_vector(6 downto 0);
+  signal dst_B1 : std_logic_vector(5 downto 0);
   signal grd_B1 : std_logic_vector(2 downto 0);
   signal src_B1_1 : std_logic_vector(32 downto 0);
-  signal dst_B1_1 : std_logic_vector(6 downto 0);
+  signal dst_B1_1 : std_logic_vector(5 downto 0);
   signal grd_B1_1 : std_logic_vector(2 downto 0);
   signal src_B1_2 : std_logic_vector(32 downto 0);
   signal dst_B1_2 : std_logic_vector(6 downto 0);
@@ -141,9 +141,9 @@ architecture rtl_andor of toplevel_decoder is
   signal dst_B1_3 : std_logic_vector(6 downto 0);
   signal grd_B1_3 : std_logic_vector(2 downto 0);
   signal src_B1_4 : std_logic_vector(32 downto 0);
-  signal dst_B1_4 : std_logic_vector(6 downto 0);
+  signal dst_B1_4 : std_logic_vector(5 downto 0);
   signal src_B1_5 : std_logic_vector(32 downto 0);
-  signal dst_B1_5 : std_logic_vector(6 downto 0);
+  signal dst_B1_5 : std_logic_vector(5 downto 0);
   signal src_B1_6 : std_logic_vector(32 downto 0);
   signal dst_B1_6 : std_logic_vector(6 downto 0);
   signal src_B1_7 : std_logic_vector(32 downto 0);
@@ -166,10 +166,10 @@ architecture rtl_andor of toplevel_decoder is
   signal socket_lsu_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_lsu_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
   signal socket_lsu_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_RF_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_RF_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_bool_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_bool_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
+  signal socket_RF_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
+  signal socket_RF_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_bool_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
+  signal socket_bool_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
   signal socket_gcu_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_gcu_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_gcu_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
@@ -182,27 +182,27 @@ architecture rtl_andor of toplevel_decoder is
   signal socket_MUL_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_MUL_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_MUL_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_0_1_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_0_1_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_RF_0_2_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_0_2_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_RF_2_1_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_2_1_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_RF_2_2_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_2_2_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
+  signal socket_RF_0_1_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_RF_0_1_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
+  signal socket_RF_0_2_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_RF_0_2_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
+  signal socket_RF_2_1_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_RF_2_1_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
+  signal socket_RF_2_2_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_RF_2_2_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
   signal socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg : std_logic_vector(7 downto 0);
   signal socket_INPUT_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_INPUT_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
   signal socket_INPUT_o2_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_5_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
-  signal socket_RF_5_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_ADDSH_1_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_ADDSH_1_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
-  signal socket_ADDSH_1_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
+  signal socket_RF_5_o1_bus_cntrl_reg : std_logic_vector(3 downto 0);
+  signal socket_RF_5_i1_bus_cntrl_reg : std_logic_vector(1 downto 0);
   signal socket_MUL_1_i1_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_MUL_1_i2_bus_cntrl_reg : std_logic_vector(2 downto 0);
   signal socket_MUL_1_o1_bus_cntrl_reg : std_logic_vector(7 downto 0);
+  signal socket_ADDSH_1_i3_bus_cntrl_reg : std_logic_vector(2 downto 0);
+  signal socket_ADDSH_1_i4_bus_cntrl_reg : std_logic_vector(2 downto 0);
+  signal socket_ADDSH_1_o2_bus_cntrl_reg : std_logic_vector(7 downto 0);
   signal simm_B1_reg : std_logic_vector(31 downto 0);
   signal simm_cntrl_B1_reg : std_logic_vector(0 downto 0);
   signal simm_B1_1_reg : std_logic_vector(31 downto 0);
@@ -236,11 +236,11 @@ architecture rtl_andor of toplevel_decoder is
   signal fu_OUTPUT_opc_reg : std_logic_vector(0 downto 0);
   signal fu_INPUT_in1t_load_reg : std_logic;
   signal fu_INPUT_opc_reg : std_logic_vector(0 downto 0);
+  signal fu_MUL_1_in1t_load_reg : std_logic;
+  signal fu_MUL_1_in2_load_reg : std_logic;
   signal fu_ADDSH_1_in1t_load_reg : std_logic;
   signal fu_ADDSH_1_in2_load_reg : std_logic;
   signal fu_ADDSH_1_opc_reg : std_logic_vector(2 downto 0);
-  signal fu_MUL_1_in1t_load_reg : std_logic;
-  signal fu_MUL_1_in2_load_reg : std_logic;
   signal fu_gcu_pc_load_reg : std_logic;
   signal fu_gcu_ra_load_reg : std_logic;
   signal fu_gcu_opc_reg : std_logic_vector(0 downto 0);
@@ -280,26 +280,26 @@ begin
   -- dismembering of instruction
   process (instructionword)
   begin --process
-    src_B1 <= instructionword(39 downto 7);
-    dst_B1 <= instructionword(6 downto 0);
-    grd_B1 <= instructionword(42 downto 40);
-    src_B1_1 <= instructionword(82 downto 50);
-    dst_B1_1 <= instructionword(49 downto 43);
-    grd_B1_1 <= instructionword(85 downto 83);
-    src_B1_2 <= instructionword(125 downto 93);
-    dst_B1_2 <= instructionword(92 downto 86);
-    grd_B1_2 <= instructionword(128 downto 126);
-    src_B1_3 <= instructionword(168 downto 136);
-    dst_B1_3 <= instructionword(135 downto 129);
-    grd_B1_3 <= instructionword(171 downto 169);
-    src_B1_4 <= instructionword(211 downto 179);
-    dst_B1_4 <= instructionword(178 downto 172);
-    src_B1_5 <= instructionword(251 downto 219);
-    dst_B1_5 <= instructionword(218 downto 212);
-    src_B1_6 <= instructionword(291 downto 259);
-    dst_B1_6 <= instructionword(258 downto 252);
-    src_B1_7 <= instructionword(331 downto 299);
-    dst_B1_7 <= instructionword(298 downto 292);
+    src_B1 <= instructionword(38 downto 6);
+    dst_B1 <= instructionword(5 downto 0);
+    grd_B1 <= instructionword(41 downto 39);
+    src_B1_1 <= instructionword(80 downto 48);
+    dst_B1_1 <= instructionword(47 downto 42);
+    grd_B1_1 <= instructionword(83 downto 81);
+    src_B1_2 <= instructionword(123 downto 91);
+    dst_B1_2 <= instructionword(90 downto 84);
+    grd_B1_2 <= instructionword(126 downto 124);
+    src_B1_3 <= instructionword(166 downto 134);
+    dst_B1_3 <= instructionword(133 downto 127);
+    grd_B1_3 <= instructionword(169 downto 167);
+    src_B1_4 <= instructionword(208 downto 176);
+    dst_B1_4 <= instructionword(175 downto 170);
+    src_B1_5 <= instructionword(247 downto 215);
+    dst_B1_5 <= instructionword(214 downto 209);
+    src_B1_6 <= instructionword(287 downto 255);
+    dst_B1_6 <= instructionword(254 downto 248);
+    src_B1_7 <= instructionword(327 downto 295);
+    dst_B1_7 <= instructionword(294 downto 288);
 
   end process;
 
@@ -325,12 +325,12 @@ begin
   fu_INPUT_in1t_load <= fu_INPUT_in1t_load_reg;
   fu_INPUT_opc <= fu_INPUT_opc_reg;
 
+  fu_MUL_1_in1t_load <= fu_MUL_1_in1t_load_reg;
+  fu_MUL_1_in2_load <= fu_MUL_1_in2_load_reg;
+
   fu_ADDSH_1_in1t_load <= fu_ADDSH_1_in1t_load_reg;
   fu_ADDSH_1_in2_load <= fu_ADDSH_1_in2_load_reg;
   fu_ADDSH_1_opc <= fu_ADDSH_1_opc_reg;
-
-  fu_MUL_1_in1t_load <= fu_MUL_1_in1t_load_reg;
-  fu_MUL_1_in2_load <= fu_MUL_1_in2_load_reg;
 
   ra_load <= fu_gcu_ra_load_reg;
   pc_load <= fu_gcu_pc_load_reg;
@@ -397,12 +397,12 @@ begin
   socket_INPUT_o2_bus_cntrl <= socket_INPUT_o2_bus_cntrl_reg;
   socket_RF_5_o1_bus_cntrl <= socket_RF_5_o1_bus_cntrl_reg;
   socket_RF_5_i1_bus_cntrl <= socket_RF_5_i1_bus_cntrl_reg;
-  socket_ADDSH_1_i1_bus_cntrl <= socket_ADDSH_1_i1_bus_cntrl_reg;
-  socket_ADDSH_1_i2_bus_cntrl <= socket_ADDSH_1_i2_bus_cntrl_reg;
-  socket_ADDSH_1_o1_bus_cntrl <= socket_ADDSH_1_o1_bus_cntrl_reg;
   socket_MUL_1_i1_bus_cntrl <= socket_MUL_1_i1_bus_cntrl_reg;
   socket_MUL_1_i2_bus_cntrl <= socket_MUL_1_i2_bus_cntrl_reg;
   socket_MUL_1_o1_bus_cntrl <= socket_MUL_1_o1_bus_cntrl_reg;
+  socket_ADDSH_1_i3_bus_cntrl <= socket_ADDSH_1_i3_bus_cntrl_reg;
+  socket_ADDSH_1_i4_bus_cntrl <= socket_ADDSH_1_i4_bus_cntrl_reg;
+  socket_ADDSH_1_o2_bus_cntrl <= socket_ADDSH_1_o2_bus_cntrl_reg;
   simm_cntrl_B1 <= simm_cntrl_B1_reg;
   simm_B1 <= simm_B1_reg;
   simm_cntrl_B1_1 <= simm_cntrl_B1_1_reg;
@@ -544,12 +544,12 @@ begin
       socket_INPUT_o2_bus_cntrl_reg <= (others => '0');
       socket_RF_5_o1_bus_cntrl_reg <= (others => '0');
       socket_RF_5_i1_bus_cntrl_reg <= (others => '0');
-      socket_ADDSH_1_i1_bus_cntrl_reg <= (others => '0');
-      socket_ADDSH_1_i2_bus_cntrl_reg <= (others => '0');
-      socket_ADDSH_1_o1_bus_cntrl_reg <= (others => '0');
       socket_MUL_1_i1_bus_cntrl_reg <= (others => '0');
       socket_MUL_1_i2_bus_cntrl_reg <= (others => '0');
       socket_MUL_1_o1_bus_cntrl_reg <= (others => '0');
+      socket_ADDSH_1_i3_bus_cntrl_reg <= (others => '0');
+      socket_ADDSH_1_i4_bus_cntrl_reg <= (others => '0');
+      socket_ADDSH_1_o2_bus_cntrl_reg <= (others => '0');
 
       simm_cntrl_B1_reg <= (others => '0');
       simm_B1_reg <= (others => '0');
@@ -583,11 +583,11 @@ begin
       fu_OUTPUT_in1t_load_reg <= '0';
       fu_INPUT_opc_reg <= (others => '0');
       fu_INPUT_in1t_load_reg <= '0';
+      fu_MUL_1_in1t_load_reg <= '0';
+      fu_MUL_1_in2_load_reg <= '0';
       fu_ADDSH_1_opc_reg <= (others => '0');
       fu_ADDSH_1_in1t_load_reg <= '0';
       fu_ADDSH_1_in2_load_reg <= '0';
-      fu_MUL_1_in1t_load_reg <= '0';
-      fu_MUL_1_in2_load_reg <= '0';
       fu_gcu_opc_reg <= (others => '0');
       fu_gcu_pc_load_reg <= '0';
       fu_gcu_ra_load_reg <= '0';
@@ -636,12 +636,12 @@ begin
         else
           socket_lsu_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 40 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 17 and squash_B1_5 = '0') then
           socket_lsu_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_lsu_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 40 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 17 and squash_B1_4 = '0') then
           socket_lsu_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_lsu_o1_bus_cntrl_reg(4) <= '0';
@@ -656,92 +656,52 @@ begin
         else
           socket_lsu_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 40 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 17 and squash_B1_1 = '0') then
           socket_lsu_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_lsu_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 40 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 17 and squash_B1 = '0') then
           socket_lsu_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_lsu_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 32 and squash_B1_7 = '0') then
-          socket_RF_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 32 and squash_B1_6 = '0') then
-          socket_RF_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 32 and squash_B1_5 = '0') then
-          socket_RF_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 32 and squash_B1_4 = '0') then
-          socket_RF_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 32 and squash_B1_3 = '0') then
           socket_RF_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 32 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 32 and squash_B1_6 = '0') then
           socket_RF_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 32 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 32 and squash_B1_3 = '0') then
           socket_RF_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 32 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 32 and squash_B1_2 = '0') then
           socket_RF_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 38 and squash_B1_7 = '0') then
-          socket_bool_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_bool_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 38 and squash_B1_6 = '0') then
-          socket_bool_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_bool_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 38 and squash_B1_5 = '0') then
-          socket_bool_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_bool_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 38 and squash_B1_4 = '0') then
-          socket_bool_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_bool_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 38 and squash_B1_3 = '0') then
           socket_bool_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_bool_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 38 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 38 and squash_B1_6 = '0') then
           socket_bool_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_bool_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 38 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 38 and squash_B1_3 = '0') then
           socket_bool_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_bool_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 38 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 38 and squash_B1_2 = '0') then
           socket_bool_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_bool_o1_bus_cntrl_reg(0) <= '0';
@@ -756,12 +716,12 @@ begin
         else
           socket_gcu_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 41 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 18 and squash_B1_5 = '0') then
           socket_gcu_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_gcu_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 41 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 18 and squash_B1_4 = '0') then
           socket_gcu_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_gcu_o1_bus_cntrl_reg(4) <= '0';
@@ -776,12 +736,12 @@ begin
         else
           socket_gcu_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 41 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 18 and squash_B1_1 = '0') then
           socket_gcu_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_gcu_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 41 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 18 and squash_B1 = '0') then
           socket_gcu_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_gcu_o1_bus_cntrl_reg(0) <= '0';
@@ -796,12 +756,12 @@ begin
         else
           socket_ALU_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 42 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 19 and squash_B1_5 = '0') then
           socket_ALU_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_ALU_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 42 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 19 and squash_B1_4 = '0') then
           socket_ALU_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_ALU_o1_bus_cntrl_reg(4) <= '0';
@@ -816,12 +776,12 @@ begin
         else
           socket_ALU_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 42 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 19 and squash_B1_1 = '0') then
           socket_ALU_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_ALU_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 42 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 19 and squash_B1 = '0') then
           socket_ALU_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_ALU_o1_bus_cntrl_reg(0) <= '0';
@@ -836,12 +796,12 @@ begin
         else
           socket_ADDSH_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 43 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 20 and squash_B1_5 = '0') then
           socket_ADDSH_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_ADDSH_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 43 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 20 and squash_B1_4 = '0') then
           socket_ADDSH_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_ADDSH_o1_bus_cntrl_reg(4) <= '0';
@@ -856,12 +816,12 @@ begin
         else
           socket_ADDSH_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 43 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 20 and squash_B1_1 = '0') then
           socket_ADDSH_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_ADDSH_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 43 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 20 and squash_B1 = '0') then
           socket_ADDSH_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_ADDSH_o1_bus_cntrl_reg(0) <= '0';
@@ -876,12 +836,12 @@ begin
         else
           socket_MUL_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 44 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 21 and squash_B1_5 = '0') then
           socket_MUL_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_MUL_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 44 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 21 and squash_B1_4 = '0') then
           socket_MUL_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_MUL_o1_bus_cntrl_reg(4) <= '0';
@@ -896,172 +856,92 @@ begin
         else
           socket_MUL_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 44 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 21 and squash_B1_1 = '0') then
           socket_MUL_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_MUL_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 44 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 21 and squash_B1 = '0') then
           socket_MUL_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_MUL_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 33 and squash_B1_7 = '0') then
-          socket_RF_0_1_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_0_1_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 33 and squash_B1_6 = '0') then
-          socket_RF_0_1_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_0_1_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 33 and squash_B1_5 = '0') then
-          socket_RF_0_1_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_0_1_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 33 and squash_B1_4 = '0') then
-          socket_RF_0_1_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_0_1_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 33 and squash_B1_3 = '0') then
           socket_RF_0_1_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_0_1_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 33 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 33 and squash_B1_6 = '0') then
           socket_RF_0_1_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_0_1_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 33 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 33 and squash_B1_3 = '0') then
           socket_RF_0_1_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_0_1_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 33 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 33 and squash_B1_2 = '0') then
           socket_RF_0_1_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_0_1_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 34 and squash_B1_7 = '0') then
-          socket_RF_0_2_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_0_2_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 34 and squash_B1_6 = '0') then
-          socket_RF_0_2_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_0_2_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 34 and squash_B1_5 = '0') then
-          socket_RF_0_2_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_0_2_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 34 and squash_B1_4 = '0') then
-          socket_RF_0_2_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_0_2_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 34 and squash_B1_3 = '0') then
           socket_RF_0_2_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_0_2_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 34 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 34 and squash_B1_6 = '0') then
           socket_RF_0_2_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_0_2_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 34 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 34 and squash_B1_3 = '0') then
           socket_RF_0_2_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_0_2_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 34 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 34 and squash_B1_2 = '0') then
           socket_RF_0_2_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_0_2_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 35 and squash_B1_7 = '0') then
-          socket_RF_2_1_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_2_1_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 35 and squash_B1_6 = '0') then
-          socket_RF_2_1_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_2_1_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 35 and squash_B1_5 = '0') then
-          socket_RF_2_1_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_2_1_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 35 and squash_B1_4 = '0') then
-          socket_RF_2_1_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_2_1_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 35 and squash_B1_3 = '0') then
           socket_RF_2_1_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_2_1_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 35 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 35 and squash_B1_6 = '0') then
           socket_RF_2_1_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_2_1_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 35 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 35 and squash_B1_3 = '0') then
           socket_RF_2_1_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_2_1_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 35 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 35 and squash_B1_2 = '0') then
           socket_RF_2_1_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_2_1_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 36 and squash_B1_7 = '0') then
-          socket_RF_2_2_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_2_2_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 36 and squash_B1_6 = '0') then
-          socket_RF_2_2_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_2_2_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 36 and squash_B1_5 = '0') then
-          socket_RF_2_2_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_2_2_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 36 and squash_B1_4 = '0') then
-          socket_RF_2_2_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_2_2_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 36 and squash_B1_3 = '0') then
           socket_RF_2_2_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_2_2_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 36 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 36 and squash_B1_6 = '0') then
           socket_RF_2_2_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_2_2_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 36 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 36 and squash_B1_3 = '0') then
           socket_RF_2_2_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_2_2_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 36 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 36 and squash_B1_2 = '0') then
           socket_RF_2_2_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_2_2_o1_bus_cntrl_reg(0) <= '0';
@@ -1076,12 +956,12 @@ begin
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 45 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 22 and squash_B1_5 = '0') then
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(5) <= '1';
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 45 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 22 and squash_B1_4 = '0') then
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(4) <= '1';
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(4) <= '0';
@@ -1096,12 +976,12 @@ begin
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 45 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 22 and squash_B1_1 = '0') then
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(1) <= '1';
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 45 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 22 and squash_B1 = '0') then
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(0) <= '1';
         else
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_reg(0) <= '0';
@@ -1116,12 +996,12 @@ begin
         else
           socket_INPUT_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 46 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 23 and squash_B1_5 = '0') then
           socket_INPUT_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_INPUT_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 46 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 23 and squash_B1_4 = '0') then
           socket_INPUT_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_INPUT_o1_bus_cntrl_reg(4) <= '0';
@@ -1136,12 +1016,12 @@ begin
         else
           socket_INPUT_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 46 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 23 and squash_B1_1 = '0') then
           socket_INPUT_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_INPUT_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 46 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 23 and squash_B1 = '0') then
           socket_INPUT_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_INPUT_o1_bus_cntrl_reg(0) <= '0';
@@ -1156,12 +1036,12 @@ begin
         else
           socket_INPUT_o2_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 47 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 24 and squash_B1_5 = '0') then
           socket_INPUT_o2_bus_cntrl_reg(5) <= '1';
         else
           socket_INPUT_o2_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 47 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 24 and squash_B1_4 = '0') then
           socket_INPUT_o2_bus_cntrl_reg(4) <= '1';
         else
           socket_INPUT_o2_bus_cntrl_reg(4) <= '0';
@@ -1176,135 +1056,115 @@ begin
         else
           socket_INPUT_o2_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 47 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 24 and squash_B1_1 = '0') then
           socket_INPUT_o2_bus_cntrl_reg(1) <= '1';
         else
           socket_INPUT_o2_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 47 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 24 and squash_B1 = '0') then
           socket_INPUT_o2_bus_cntrl_reg(0) <= '1';
         else
           socket_INPUT_o2_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 37 and squash_B1_7 = '0') then
-          socket_RF_5_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_RF_5_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 37 and squash_B1_6 = '0') then
-          socket_RF_5_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_RF_5_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 37 and squash_B1_5 = '0') then
-          socket_RF_5_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_RF_5_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 37 and squash_B1_4 = '0') then
-          socket_RF_5_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_RF_5_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 37 and squash_B1_3 = '0') then
           socket_RF_5_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_RF_5_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 37 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 37 and squash_B1_6 = '0') then
           socket_RF_5_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_RF_5_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 37 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 37 and squash_B1_3 = '0') then
           socket_RF_5_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_RF_5_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 37 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 37 and squash_B1_2 = '0') then
           socket_RF_5_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_RF_5_o1_bus_cntrl_reg(0) <= '0';
         end if;
         if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 48 and squash_B1_7 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(7) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(7) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 48 and squash_B1_6 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(6) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(6) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 48 and squash_B1_5 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(5) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(5) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 48 and squash_B1_4 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(4) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(4) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 48 and squash_B1_3 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(3) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(3) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 48 and squash_B1_2 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(2) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(2) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 48 and squash_B1_1 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(1) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(1) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 48 and squash_B1 = '0') then
-          socket_ADDSH_1_o1_bus_cntrl_reg(0) <= '1';
-        else
-          socket_ADDSH_1_o1_bus_cntrl_reg(0) <= '0';
-        end if;
-        if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 49 and squash_B1_7 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(7) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(7) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 49 and squash_B1_6 = '0') then
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 48 and squash_B1_6 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(6) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(6) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_5(32 downto 27))) = 49 and squash_B1_5 = '0') then
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 25 and squash_B1_5 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(5) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(5) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_4(32 downto 27))) = 49 and squash_B1_4 = '0') then
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 25 and squash_B1_4 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(4) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(4) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 49 and squash_B1_3 = '0') then
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 48 and squash_B1_3 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(3) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(3) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 49 and squash_B1_2 = '0') then
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 48 and squash_B1_2 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(2) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(2) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1_1(32 downto 27))) = 49 and squash_B1_1 = '0') then
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 25 and squash_B1_1 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(1) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(1) <= '0';
         end if;
-        if (conv_integer(unsigned(src_B1(32 downto 27))) = 49 and squash_B1 = '0') then
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 25 and squash_B1 = '0') then
           socket_MUL_1_o1_bus_cntrl_reg(0) <= '1';
         else
           socket_MUL_1_o1_bus_cntrl_reg(0) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_7(32 downto 27))) = 49 and squash_B1_7 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(7) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(7) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_6(32 downto 27))) = 49 and squash_B1_6 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(6) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(6) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_5(32 downto 28))) = 26 and squash_B1_5 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(5) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(5) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_4(32 downto 28))) = 26 and squash_B1_4 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(4) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(4) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_3(32 downto 27))) = 49 and squash_B1_3 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(3) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(3) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_2(32 downto 27))) = 49 and squash_B1_2 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(2) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(2) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1_1(32 downto 28))) = 26 and squash_B1_1 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(1) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(1) <= '0';
+        end if;
+        if (conv_integer(unsigned(src_B1(32 downto 28))) = 26 and squash_B1 = '0') then
+          socket_ADDSH_1_o2_bus_cntrl_reg(0) <= '1';
+        else
+          socket_ADDSH_1_o2_bus_cntrl_reg(0) <= '0';
         end if;
 
         --bus control signals for short immediate sockets
@@ -1366,24 +1226,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 32 and squash_B1_6 = '0') then
           rf_RF_0_rd_load_reg <= '1';
           rf_RF_0_rd_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_0_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 32 and squash_B1_5 = '0') then
-          rf_RF_0_rd_load_reg <= '1';
-          rf_RF_0_rd_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_0_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 32 and squash_B1_4 = '0') then
-          rf_RF_0_rd_load_reg <= '1';
-          rf_RF_0_rd_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_0_rd_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 32 and squash_B1_3 = '0') then
           rf_RF_0_rd_load_reg <= '1';
           rf_RF_0_rd_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_0_rd_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 32 and squash_B1_2 = '0') then
           rf_RF_0_rd_load_reg <= '1';
           rf_RF_0_rd_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_0_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 32 and squash_B1_1 = '0') then
-          rf_RF_0_rd_load_reg <= '1';
-          rf_RF_0_rd_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_0_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 32 and squash_B1 = '0') then
-          rf_RF_0_rd_load_reg <= '1';
-          rf_RF_0_rd_opc_reg <= ext(src_B1(2 downto 0), rf_RF_0_rd_opc_reg'length);
         else
           rf_RF_0_rd_load_reg <= '0';
         end if;
@@ -1393,24 +1241,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 38 and squash_B1_6 = '0') then
           rf_BOOL_rd_load_reg <= '1';
           rf_BOOL_rd_opc_reg <= ext(src_B1_6(0 downto 0), rf_BOOL_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 38 and squash_B1_5 = '0') then
-          rf_BOOL_rd_load_reg <= '1';
-          rf_BOOL_rd_opc_reg <= ext(src_B1_5(0 downto 0), rf_BOOL_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 38 and squash_B1_4 = '0') then
-          rf_BOOL_rd_load_reg <= '1';
-          rf_BOOL_rd_opc_reg <= ext(src_B1_4(0 downto 0), rf_BOOL_rd_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 38 and squash_B1_3 = '0') then
           rf_BOOL_rd_load_reg <= '1';
           rf_BOOL_rd_opc_reg <= ext(src_B1_3(0 downto 0), rf_BOOL_rd_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 38 and squash_B1_2 = '0') then
           rf_BOOL_rd_load_reg <= '1';
           rf_BOOL_rd_opc_reg <= ext(src_B1_2(0 downto 0), rf_BOOL_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 38 and squash_B1_1 = '0') then
-          rf_BOOL_rd_load_reg <= '1';
-          rf_BOOL_rd_opc_reg <= ext(src_B1_1(0 downto 0), rf_BOOL_rd_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 38 and squash_B1 = '0') then
-          rf_BOOL_rd_load_reg <= '1';
-          rf_BOOL_rd_opc_reg <= ext(src_B1(0 downto 0), rf_BOOL_rd_opc_reg'length);
         else
           rf_BOOL_rd_load_reg <= '0';
         end if;
@@ -1420,24 +1256,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 33 and squash_B1_6 = '0') then
           rf_RF_1_wr_load_reg <= '1';
           rf_RF_1_wr_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_1_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 33 and squash_B1_5 = '0') then
-          rf_RF_1_wr_load_reg <= '1';
-          rf_RF_1_wr_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_1_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 33 and squash_B1_4 = '0') then
-          rf_RF_1_wr_load_reg <= '1';
-          rf_RF_1_wr_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_1_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 33 and squash_B1_3 = '0') then
           rf_RF_1_wr_load_reg <= '1';
           rf_RF_1_wr_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_1_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 33 and squash_B1_2 = '0') then
           rf_RF_1_wr_load_reg <= '1';
           rf_RF_1_wr_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_1_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 33 and squash_B1_1 = '0') then
-          rf_RF_1_wr_load_reg <= '1';
-          rf_RF_1_wr_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_1_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 33 and squash_B1 = '0') then
-          rf_RF_1_wr_load_reg <= '1';
-          rf_RF_1_wr_opc_reg <= ext(src_B1(2 downto 0), rf_RF_1_wr_opc_reg'length);
         else
           rf_RF_1_wr_load_reg <= '0';
         end if;
@@ -1447,24 +1271,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 34 and squash_B1_6 = '0') then
           rf_RF_2_wr_load_reg <= '1';
           rf_RF_2_wr_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_2_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 34 and squash_B1_5 = '0') then
-          rf_RF_2_wr_load_reg <= '1';
-          rf_RF_2_wr_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_2_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 34 and squash_B1_4 = '0') then
-          rf_RF_2_wr_load_reg <= '1';
-          rf_RF_2_wr_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_2_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 34 and squash_B1_3 = '0') then
           rf_RF_2_wr_load_reg <= '1';
           rf_RF_2_wr_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_2_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 34 and squash_B1_2 = '0') then
           rf_RF_2_wr_load_reg <= '1';
           rf_RF_2_wr_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_2_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 34 and squash_B1_1 = '0') then
-          rf_RF_2_wr_load_reg <= '1';
-          rf_RF_2_wr_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_2_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 34 and squash_B1 = '0') then
-          rf_RF_2_wr_load_reg <= '1';
-          rf_RF_2_wr_opc_reg <= ext(src_B1(2 downto 0), rf_RF_2_wr_opc_reg'length);
         else
           rf_RF_2_wr_load_reg <= '0';
         end if;
@@ -1474,24 +1286,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 35 and squash_B1_6 = '0') then
           rf_RF_3_wr_load_reg <= '1';
           rf_RF_3_wr_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_3_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 35 and squash_B1_5 = '0') then
-          rf_RF_3_wr_load_reg <= '1';
-          rf_RF_3_wr_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_3_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 35 and squash_B1_4 = '0') then
-          rf_RF_3_wr_load_reg <= '1';
-          rf_RF_3_wr_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_3_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 35 and squash_B1_3 = '0') then
           rf_RF_3_wr_load_reg <= '1';
           rf_RF_3_wr_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_3_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 35 and squash_B1_2 = '0') then
           rf_RF_3_wr_load_reg <= '1';
           rf_RF_3_wr_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_3_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 35 and squash_B1_1 = '0') then
-          rf_RF_3_wr_load_reg <= '1';
-          rf_RF_3_wr_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_3_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 35 and squash_B1 = '0') then
-          rf_RF_3_wr_load_reg <= '1';
-          rf_RF_3_wr_opc_reg <= ext(src_B1(2 downto 0), rf_RF_3_wr_opc_reg'length);
         else
           rf_RF_3_wr_load_reg <= '0';
         end if;
@@ -1501,24 +1301,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 36 and squash_B1_6 = '0') then
           rf_RF_4_wr_load_reg <= '1';
           rf_RF_4_wr_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_4_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 36 and squash_B1_5 = '0') then
-          rf_RF_4_wr_load_reg <= '1';
-          rf_RF_4_wr_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_4_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 36 and squash_B1_4 = '0') then
-          rf_RF_4_wr_load_reg <= '1';
-          rf_RF_4_wr_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_4_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 36 and squash_B1_3 = '0') then
           rf_RF_4_wr_load_reg <= '1';
           rf_RF_4_wr_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_4_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 36 and squash_B1_2 = '0') then
           rf_RF_4_wr_load_reg <= '1';
           rf_RF_4_wr_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_4_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 36 and squash_B1_1 = '0') then
-          rf_RF_4_wr_load_reg <= '1';
-          rf_RF_4_wr_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_4_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 36 and squash_B1 = '0') then
-          rf_RF_4_wr_load_reg <= '1';
-          rf_RF_4_wr_opc_reg <= ext(src_B1(2 downto 0), rf_RF_4_wr_opc_reg'length);
         else
           rf_RF_4_wr_load_reg <= '0';
         end if;
@@ -1528,24 +1316,12 @@ begin
         elsif (conv_integer(unsigned(src_B1_6(32 downto 27))) = 37 and squash_B1_6 = '0') then
           rf_RF_5_wr_load_reg <= '1';
           rf_RF_5_wr_opc_reg <= ext(src_B1_6(2 downto 0), rf_RF_5_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_5(32 downto 27))) = 37 and squash_B1_5 = '0') then
-          rf_RF_5_wr_load_reg <= '1';
-          rf_RF_5_wr_opc_reg <= ext(src_B1_5(2 downto 0), rf_RF_5_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_4(32 downto 27))) = 37 and squash_B1_4 = '0') then
-          rf_RF_5_wr_load_reg <= '1';
-          rf_RF_5_wr_opc_reg <= ext(src_B1_4(2 downto 0), rf_RF_5_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_3(32 downto 27))) = 37 and squash_B1_3 = '0') then
           rf_RF_5_wr_load_reg <= '1';
           rf_RF_5_wr_opc_reg <= ext(src_B1_3(2 downto 0), rf_RF_5_wr_opc_reg'length);
         elsif (conv_integer(unsigned(src_B1_2(32 downto 27))) = 37 and squash_B1_2 = '0') then
           rf_RF_5_wr_load_reg <= '1';
           rf_RF_5_wr_opc_reg <= ext(src_B1_2(2 downto 0), rf_RF_5_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1_1(32 downto 27))) = 37 and squash_B1_1 = '0') then
-          rf_RF_5_wr_load_reg <= '1';
-          rf_RF_5_wr_opc_reg <= ext(src_B1_1(2 downto 0), rf_RF_5_wr_opc_reg'length);
-        elsif (conv_integer(unsigned(src_B1(32 downto 27))) = 37 and squash_B1 = '0') then
-          rf_RF_5_wr_load_reg <= '1';
-          rf_RF_5_wr_opc_reg <= ext(src_B1(2 downto 0), rf_RF_5_wr_opc_reg'length);
         else
           rf_RF_5_wr_load_reg <= '0';
         end if;
@@ -1561,11 +1337,11 @@ begin
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1_6(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_lsu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 2 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 3))) = 2 and squash_B1_5 = '0') then
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1_5(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_lsu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 2 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 3))) = 2 and squash_B1_4 = '0') then
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1_4(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_lsu_i1_bus_cntrl_reg'length);
@@ -1577,11 +1353,11 @@ begin
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1_2(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_lsu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 2 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 3))) = 2 and squash_B1_1 = '0') then
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1_1(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_lsu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 2 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 3))) = 2 and squash_B1 = '0') then
           fu_LSU_in1t_load_reg <= '1';
           fu_LSU_opc_reg <= dst_B1(2 downto 0);
           socket_lsu_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_lsu_i1_bus_cntrl_reg'length);
@@ -1594,10 +1370,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 97 and squash_B1_6 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_lsu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 97 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 47 and squash_B1_5 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_lsu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 97 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 47 and squash_B1_4 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_lsu_i2_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 97 and squash_B1_3 = '0') then
@@ -1606,10 +1382,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 97 and squash_B1_2 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_lsu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 97 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 47 and squash_B1_1 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_lsu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 97 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 47 and squash_B1 = '0') then
           fu_LSU_in2_load_reg <= '1';
           socket_lsu_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_lsu_i2_bus_cntrl_reg'length);
         else
@@ -1623,11 +1399,11 @@ begin
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1_6(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ALU_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 4))) = 0 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 4))) = 0 and squash_B1_5 = '0') then
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1_5(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ALU_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 4))) = 0 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 4))) = 0 and squash_B1_4 = '0') then
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1_4(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ALU_i1_bus_cntrl_reg'length);
@@ -1639,11 +1415,11 @@ begin
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1_2(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ALU_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 4))) = 0 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 4))) = 0 and squash_B1_1 = '0') then
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1_1(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ALU_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 4))) = 0 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 4))) = 0 and squash_B1 = '0') then
           fu_ALU_in1t_load_reg <= '1';
           fu_ALU_opc_reg <= dst_B1(3 downto 0);
           socket_ALU_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ALU_i1_bus_cntrl_reg'length);
@@ -1656,10 +1432,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 99 and squash_B1_6 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ALU_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 99 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 49 and squash_B1_5 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ALU_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 99 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 49 and squash_B1_4 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ALU_i2_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 99 and squash_B1_3 = '0') then
@@ -1668,10 +1444,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 99 and squash_B1_2 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ALU_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 99 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 49 and squash_B1_1 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ALU_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 99 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 49 and squash_B1 = '0') then
           fu_ALU_in2_load_reg <= '1';
           socket_ALU_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ALU_i2_bus_cntrl_reg'length);
         else
@@ -1685,11 +1461,11 @@ begin
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1_6(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 4 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 3))) = 3 and squash_B1_5 = '0') then
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1_5(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 4 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 3))) = 3 and squash_B1_4 = '0') then
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1_4(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_i1_bus_cntrl_reg'length);
@@ -1701,11 +1477,11 @@ begin
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1_2(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 4 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 3))) = 3 and squash_B1_1 = '0') then
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1_1(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 4 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 3))) = 3 and squash_B1 = '0') then
           fu_ADDSH_in1t_load_reg <= '1';
           fu_ADDSH_opc_reg <= dst_B1(2 downto 0);
           socket_ADDSH_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_i1_bus_cntrl_reg'length);
@@ -1718,10 +1494,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 100 and squash_B1_6 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 100 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 50 and squash_B1_5 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 100 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 50 and squash_B1_4 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_i2_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 100 and squash_B1_3 = '0') then
@@ -1730,10 +1506,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 100 and squash_B1_2 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 100 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 50 and squash_B1_1 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 100 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 50 and squash_B1 = '0') then
           fu_ADDSH_in2_load_reg <= '1';
           socket_ADDSH_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_i2_bus_cntrl_reg'length);
         else
@@ -1745,10 +1521,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 101 and squash_B1_6 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_MUL_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 101 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 51 and squash_B1_5 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_MUL_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 101 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 51 and squash_B1_4 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_MUL_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 101 and squash_B1_3 = '0') then
@@ -1757,10 +1533,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 101 and squash_B1_2 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_MUL_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 101 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 51 and squash_B1_1 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_MUL_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 101 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 51 and squash_B1 = '0') then
           fu_MUL_in1t_load_reg <= '1';
           socket_MUL_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_MUL_i1_bus_cntrl_reg'length);
         else
@@ -1772,10 +1548,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 102 and squash_B1_6 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_MUL_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 102 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 52 and squash_B1_5 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_MUL_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 102 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 52 and squash_B1_4 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_MUL_i2_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 102 and squash_B1_3 = '0') then
@@ -1784,10 +1560,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 102 and squash_B1_2 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_MUL_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 102 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 52 and squash_B1_1 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_MUL_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 102 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 52 and squash_B1 = '0') then
           fu_MUL_in2_load_reg <= '1';
           socket_MUL_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_MUL_i2_bus_cntrl_reg'length);
         else
@@ -1801,11 +1577,11 @@ begin
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1_6(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 1))) = 46 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 1))) = 21 and squash_B1_5 = '0') then
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1_5(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 1))) = 46 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 1))) = 21 and squash_B1_4 = '0') then
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1_4(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
@@ -1817,11 +1593,11 @@ begin
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1_2(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 1))) = 46 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 1))) = 21 and squash_B1_1 = '0') then
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1_1(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 1))) = 46 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 1))) = 21 and squash_B1 = '0') then
           fu_OUTPUT_in1t_load_reg <= '1';
           fu_OUTPUT_opc_reg <= dst_B1(0 downto 0);
           socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg'length);
@@ -1836,11 +1612,11 @@ begin
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1_6(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_INPUT_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 1))) = 47 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 1))) = 22 and squash_B1_5 = '0') then
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1_5(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_INPUT_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 1))) = 47 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 1))) = 22 and squash_B1_4 = '0') then
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1_4(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_INPUT_i1_bus_cntrl_reg'length);
@@ -1852,132 +1628,132 @@ begin
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1_2(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_INPUT_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 1))) = 47 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 1))) = 22 and squash_B1_1 = '0') then
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1_1(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_INPUT_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 1))) = 47 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 1))) = 22 and squash_B1 = '0') then
           fu_INPUT_in1t_load_reg <= '1';
           fu_INPUT_opc_reg <= dst_B1(0 downto 0);
           socket_INPUT_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_INPUT_i1_bus_cntrl_reg'length);
         else
           fu_INPUT_in1t_load_reg <= '0';
         end if;
-        if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 10 and squash_B1_7 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_7(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 10 and squash_B1_6 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_6(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 10 and squash_B1_5 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_5(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 10 and squash_B1_4 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_4(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 10 and squash_B1_3 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_3(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 10 and squash_B1_2 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_2(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 10 and squash_B1_1 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1_1(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 10 and squash_B1 = '0') then
-          fu_ADDSH_1_in1t_load_reg <= '1';
-          fu_ADDSH_1_opc_reg <= dst_B1(2 downto 0);
-          socket_ADDSH_1_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_1_i1_bus_cntrl_reg'length);
-        else
-          fu_ADDSH_1_in1t_load_reg <= '0';
-        end if;
         if (conv_integer(unsigned(dst_B1_7(6 downto 0))) = 103 and squash_B1_7 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(7, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 103 and squash_B1_6 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 103 and squash_B1_5 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 103 and squash_B1_4 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 103 and squash_B1_3 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(3, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 103 and squash_B1_2 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 103 and squash_B1_1 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 103 and squash_B1 = '0') then
-          fu_ADDSH_1_in2_load_reg <= '1';
-          socket_ADDSH_1_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_1_i2_bus_cntrl_reg'length);
-        else
-          fu_ADDSH_1_in2_load_reg <= '0';
-        end if;
-        if (conv_integer(unsigned(dst_B1_7(6 downto 0))) = 104 and squash_B1_7 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 104 and squash_B1_6 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 103 and squash_B1_6 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 104 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 53 and squash_B1_5 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 104 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 53 and squash_B1_4 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 104 and squash_B1_3 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 103 and squash_B1_3 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 104 and squash_B1_2 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 103 and squash_B1_2 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 104 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 53 and squash_B1_1 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_MUL_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 104 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 53 and squash_B1 = '0') then
           fu_MUL_1_in1t_load_reg <= '1';
           socket_MUL_1_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_MUL_1_i1_bus_cntrl_reg'length);
         else
           fu_MUL_1_in1t_load_reg <= '0';
         end if;
-        if (conv_integer(unsigned(dst_B1_7(6 downto 0))) = 105 and squash_B1_7 = '0') then
+        if (conv_integer(unsigned(dst_B1_7(6 downto 0))) = 104 and squash_B1_7 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(7, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 105 and squash_B1_6 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 104 and squash_B1_6 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 105 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 54 and squash_B1_5 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 105 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 54 and squash_B1_4 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 105 and squash_B1_3 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 104 and squash_B1_3 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(3, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 105 and squash_B1_2 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 104 and squash_B1_2 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 105 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 54 and squash_B1_1 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_MUL_1_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 105 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 54 and squash_B1 = '0') then
           fu_MUL_1_in2_load_reg <= '1';
           socket_MUL_1_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_MUL_1_i2_bus_cntrl_reg'length);
         else
           fu_MUL_1_in2_load_reg <= '0';
+        end if;
+        if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 10 and squash_B1_7 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_7(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(7, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 10 and squash_B1_6 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_6(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 3))) = 4 and squash_B1_5 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_5(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 3))) = 4 and squash_B1_4 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_4(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 10 and squash_B1_3 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_3(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(3, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 10 and squash_B1_2 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_2(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 3))) = 4 and squash_B1_1 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1_1(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1(5 downto 3))) = 4 and squash_B1 = '0') then
+          fu_ADDSH_1_in1t_load_reg <= '1';
+          fu_ADDSH_1_opc_reg <= dst_B1(2 downto 0);
+          socket_ADDSH_1_i3_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_1_i3_bus_cntrl_reg'length);
+        else
+          fu_ADDSH_1_in1t_load_reg <= '0';
+        end if;
+        if (conv_integer(unsigned(dst_B1_7(6 downto 0))) = 105 and squash_B1_7 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(7, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 105 and squash_B1_6 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(6, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 55 and squash_B1_5 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(5, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 55 and squash_B1_4 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(4, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 105 and squash_B1_3 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(3, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 105 and squash_B1_2 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(2, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 55 and squash_B1_1 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(1, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 55 and squash_B1 = '0') then
+          fu_ADDSH_1_in2_load_reg <= '1';
+          socket_ADDSH_1_i4_bus_cntrl_reg <= conv_std_logic_vector(0, socket_ADDSH_1_i4_bus_cntrl_reg'length);
+        else
+          fu_ADDSH_1_in2_load_reg <= '0';
         end if;
         if (conv_integer(unsigned(dst_B1_7(6 downto 1))) = 45 and squash_B1_7 = '0') then
           if (conv_integer(unsigned(dst_B1_7(0 downto 0))) = 1) then
@@ -2001,7 +1777,7 @@ begin
             fu_gcu_pc_load_reg <= '0';
           end if;
           socket_gcu_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_gcu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 1))) = 45 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 1))) = 20 and squash_B1_5 = '0') then
           if (conv_integer(unsigned(dst_B1_5(0 downto 0))) = 1) then
             fu_gcu_pc_load_reg <= '1';
           fu_gcu_opc_reg <= IFE_JUMP;
@@ -2012,7 +1788,7 @@ begin
             fu_gcu_pc_load_reg <= '0';
           end if;
           socket_gcu_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_gcu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 1))) = 45 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 1))) = 20 and squash_B1_4 = '0') then
           if (conv_integer(unsigned(dst_B1_4(0 downto 0))) = 1) then
             fu_gcu_pc_load_reg <= '1';
           fu_gcu_opc_reg <= IFE_JUMP;
@@ -2045,7 +1821,7 @@ begin
             fu_gcu_pc_load_reg <= '0';
           end if;
           socket_gcu_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_gcu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 1))) = 45 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 1))) = 20 and squash_B1_1 = '0') then
           if (conv_integer(unsigned(dst_B1_1(0 downto 0))) = 1) then
             fu_gcu_pc_load_reg <= '1';
           fu_gcu_opc_reg <= IFE_JUMP;
@@ -2056,7 +1832,7 @@ begin
             fu_gcu_pc_load_reg <= '0';
           end if;
           socket_gcu_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_gcu_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 1))) = 45 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 1))) = 20 and squash_B1 = '0') then
           if (conv_integer(unsigned(dst_B1(0 downto 0))) = 1) then
             fu_gcu_pc_load_reg <= '1';
           fu_gcu_opc_reg <= IFE_JUMP;
@@ -2076,10 +1852,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 0))) = 98 and squash_B1_6 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(6, socket_gcu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 0))) = 98 and squash_B1_5 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_5(5 downto 0))) = 48 and squash_B1_5 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(5, socket_gcu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 0))) = 98 and squash_B1_4 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_4(5 downto 0))) = 48 and squash_B1_4 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(4, socket_gcu_i2_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 0))) = 98 and squash_B1_3 = '0') then
@@ -2088,10 +1864,10 @@ begin
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 0))) = 98 and squash_B1_2 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(2, socket_gcu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 0))) = 98 and squash_B1_1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1_1(5 downto 0))) = 48 and squash_B1_1 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(1, socket_gcu_i2_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 0))) = 98 and squash_B1 = '0') then
+        elsif (conv_integer(unsigned(dst_B1(5 downto 0))) = 48 and squash_B1 = '0') then
           fu_gcu_ra_load_reg <= '1';
           socket_gcu_i2_bus_cntrl_reg <= conv_std_logic_vector(0, socket_gcu_i2_bus_cntrl_reg'length);
         else
@@ -2102,34 +1878,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 3 and squash_B1_7 = '0') then
           rf_RF_0_wr_load_reg <= '1';
           rf_RF_0_wr_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_i1_bus_cntrl_reg'length);
+          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 3 and squash_B1_6 = '0') then
           rf_RF_0_wr_load_reg <= '1';
           rf_RF_0_wr_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 3 and squash_B1_5 = '0') then
-          rf_RF_0_wr_load_reg <= '1';
-          rf_RF_0_wr_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 3 and squash_B1_4 = '0') then
-          rf_RF_0_wr_load_reg <= '1';
-          rf_RF_0_wr_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_i1_bus_cntrl_reg'length);
+          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 3 and squash_B1_3 = '0') then
           rf_RF_0_wr_load_reg <= '1';
           rf_RF_0_wr_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_i1_bus_cntrl_reg'length);
+          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 3 and squash_B1_2 = '0') then
           rf_RF_0_wr_load_reg <= '1';
           rf_RF_0_wr_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 3 and squash_B1_1 = '0') then
-          rf_RF_0_wr_load_reg <= '1';
-          rf_RF_0_wr_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 3 and squash_B1 = '0') then
-          rf_RF_0_wr_load_reg <= '1';
-          rf_RF_0_wr_opc_reg <= dst_B1(2 downto 0);
           socket_RF_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_i1_bus_cntrl_reg'length);
         else
           rf_RF_0_wr_load_reg <= '0';
@@ -2137,34 +1897,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 1))) = 44 and squash_B1_7 = '0') then
           rf_BOOL_wr_load_reg <= '1';
           rf_BOOL_wr_opc_reg <= dst_B1_7(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_bool_i1_bus_cntrl_reg'length);
+          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_bool_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 1))) = 44 and squash_B1_6 = '0') then
           rf_BOOL_wr_load_reg <= '1';
           rf_BOOL_wr_opc_reg <= dst_B1_6(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_bool_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 1))) = 44 and squash_B1_5 = '0') then
-          rf_BOOL_wr_load_reg <= '1';
-          rf_BOOL_wr_opc_reg <= dst_B1_5(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_bool_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 1))) = 44 and squash_B1_4 = '0') then
-          rf_BOOL_wr_load_reg <= '1';
-          rf_BOOL_wr_opc_reg <= dst_B1_4(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_bool_i1_bus_cntrl_reg'length);
+          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_bool_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 1))) = 44 and squash_B1_3 = '0') then
           rf_BOOL_wr_load_reg <= '1';
           rf_BOOL_wr_opc_reg <= dst_B1_3(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_bool_i1_bus_cntrl_reg'length);
+          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_bool_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 1))) = 44 and squash_B1_2 = '0') then
           rf_BOOL_wr_load_reg <= '1';
           rf_BOOL_wr_opc_reg <= dst_B1_2(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_bool_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 1))) = 44 and squash_B1_1 = '0') then
-          rf_BOOL_wr_load_reg <= '1';
-          rf_BOOL_wr_opc_reg <= dst_B1_1(0 downto 0);
-          socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_bool_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 1))) = 44 and squash_B1 = '0') then
-          rf_BOOL_wr_load_reg <= '1';
-          rf_BOOL_wr_opc_reg <= dst_B1(0 downto 0);
           socket_bool_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_bool_i1_bus_cntrl_reg'length);
         else
           rf_BOOL_wr_load_reg <= '0';
@@ -2172,34 +1916,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 5 and squash_B1_7 = '0') then
           rf_RF_1_rd_load_reg <= '1';
           rf_RF_1_rd_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_0_1_i1_bus_cntrl_reg'length);
+          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_0_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 5 and squash_B1_6 = '0') then
           rf_RF_1_rd_load_reg <= '1';
           rf_RF_1_rd_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_0_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 5 and squash_B1_5 = '0') then
-          rf_RF_1_rd_load_reg <= '1';
-          rf_RF_1_rd_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_0_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 5 and squash_B1_4 = '0') then
-          rf_RF_1_rd_load_reg <= '1';
-          rf_RF_1_rd_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_0_1_i1_bus_cntrl_reg'length);
+          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_0_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 5 and squash_B1_3 = '0') then
           rf_RF_1_rd_load_reg <= '1';
           rf_RF_1_rd_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_0_1_i1_bus_cntrl_reg'length);
+          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_0_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 5 and squash_B1_2 = '0') then
           rf_RF_1_rd_load_reg <= '1';
           rf_RF_1_rd_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_0_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 5 and squash_B1_1 = '0') then
-          rf_RF_1_rd_load_reg <= '1';
-          rf_RF_1_rd_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_0_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 5 and squash_B1 = '0') then
-          rf_RF_1_rd_load_reg <= '1';
-          rf_RF_1_rd_opc_reg <= dst_B1(2 downto 0);
           socket_RF_0_1_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_0_1_i1_bus_cntrl_reg'length);
         else
           rf_RF_1_rd_load_reg <= '0';
@@ -2207,34 +1935,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 6 and squash_B1_7 = '0') then
           rf_RF_2_rd_load_reg <= '1';
           rf_RF_2_rd_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_0_2_i1_bus_cntrl_reg'length);
+          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_0_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 6 and squash_B1_6 = '0') then
           rf_RF_2_rd_load_reg <= '1';
           rf_RF_2_rd_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_0_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 6 and squash_B1_5 = '0') then
-          rf_RF_2_rd_load_reg <= '1';
-          rf_RF_2_rd_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_0_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 6 and squash_B1_4 = '0') then
-          rf_RF_2_rd_load_reg <= '1';
-          rf_RF_2_rd_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_0_2_i1_bus_cntrl_reg'length);
+          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_0_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 6 and squash_B1_3 = '0') then
           rf_RF_2_rd_load_reg <= '1';
           rf_RF_2_rd_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_0_2_i1_bus_cntrl_reg'length);
+          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_0_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 6 and squash_B1_2 = '0') then
           rf_RF_2_rd_load_reg <= '1';
           rf_RF_2_rd_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_0_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 6 and squash_B1_1 = '0') then
-          rf_RF_2_rd_load_reg <= '1';
-          rf_RF_2_rd_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_0_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 6 and squash_B1 = '0') then
-          rf_RF_2_rd_load_reg <= '1';
-          rf_RF_2_rd_opc_reg <= dst_B1(2 downto 0);
           socket_RF_0_2_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_0_2_i1_bus_cntrl_reg'length);
         else
           rf_RF_2_rd_load_reg <= '0';
@@ -2242,34 +1954,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 7 and squash_B1_7 = '0') then
           rf_RF_3_rd_load_reg <= '1';
           rf_RF_3_rd_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_2_1_i1_bus_cntrl_reg'length);
+          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_2_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 7 and squash_B1_6 = '0') then
           rf_RF_3_rd_load_reg <= '1';
           rf_RF_3_rd_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_2_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 7 and squash_B1_5 = '0') then
-          rf_RF_3_rd_load_reg <= '1';
-          rf_RF_3_rd_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_2_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 7 and squash_B1_4 = '0') then
-          rf_RF_3_rd_load_reg <= '1';
-          rf_RF_3_rd_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_2_1_i1_bus_cntrl_reg'length);
+          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_2_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 7 and squash_B1_3 = '0') then
           rf_RF_3_rd_load_reg <= '1';
           rf_RF_3_rd_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_2_1_i1_bus_cntrl_reg'length);
+          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_2_1_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 7 and squash_B1_2 = '0') then
           rf_RF_3_rd_load_reg <= '1';
           rf_RF_3_rd_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_2_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 7 and squash_B1_1 = '0') then
-          rf_RF_3_rd_load_reg <= '1';
-          rf_RF_3_rd_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_2_1_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 7 and squash_B1 = '0') then
-          rf_RF_3_rd_load_reg <= '1';
-          rf_RF_3_rd_opc_reg <= dst_B1(2 downto 0);
           socket_RF_2_1_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_2_1_i1_bus_cntrl_reg'length);
         else
           rf_RF_3_rd_load_reg <= '0';
@@ -2277,34 +1973,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 8 and squash_B1_7 = '0') then
           rf_RF_4_rd_load_reg <= '1';
           rf_RF_4_rd_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_2_2_i1_bus_cntrl_reg'length);
+          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_2_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 8 and squash_B1_6 = '0') then
           rf_RF_4_rd_load_reg <= '1';
           rf_RF_4_rd_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_2_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 8 and squash_B1_5 = '0') then
-          rf_RF_4_rd_load_reg <= '1';
-          rf_RF_4_rd_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_2_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 8 and squash_B1_4 = '0') then
-          rf_RF_4_rd_load_reg <= '1';
-          rf_RF_4_rd_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_2_2_i1_bus_cntrl_reg'length);
+          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_2_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 8 and squash_B1_3 = '0') then
           rf_RF_4_rd_load_reg <= '1';
           rf_RF_4_rd_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_2_2_i1_bus_cntrl_reg'length);
+          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_2_2_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 8 and squash_B1_2 = '0') then
           rf_RF_4_rd_load_reg <= '1';
           rf_RF_4_rd_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_2_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 8 and squash_B1_1 = '0') then
-          rf_RF_4_rd_load_reg <= '1';
-          rf_RF_4_rd_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_2_2_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 8 and squash_B1 = '0') then
-          rf_RF_4_rd_load_reg <= '1';
-          rf_RF_4_rd_opc_reg <= dst_B1(2 downto 0);
           socket_RF_2_2_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_2_2_i1_bus_cntrl_reg'length);
         else
           rf_RF_4_rd_load_reg <= '0';
@@ -2312,34 +1992,18 @@ begin
         if (conv_integer(unsigned(dst_B1_7(6 downto 3))) = 9 and squash_B1_7 = '0') then
           rf_RF_5_rd_load_reg <= '1';
           rf_RF_5_rd_opc_reg <= dst_B1_7(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(7, socket_RF_5_i1_bus_cntrl_reg'length);
+          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_5_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_6(6 downto 3))) = 9 and squash_B1_6 = '0') then
           rf_RF_5_rd_load_reg <= '1';
           rf_RF_5_rd_opc_reg <= dst_B1_6(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(6, socket_RF_5_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_5(6 downto 3))) = 9 and squash_B1_5 = '0') then
-          rf_RF_5_rd_load_reg <= '1';
-          rf_RF_5_rd_opc_reg <= dst_B1_5(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(5, socket_RF_5_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_4(6 downto 3))) = 9 and squash_B1_4 = '0') then
-          rf_RF_5_rd_load_reg <= '1';
-          rf_RF_5_rd_opc_reg <= dst_B1_4(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(4, socket_RF_5_i1_bus_cntrl_reg'length);
+          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_5_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_3(6 downto 3))) = 9 and squash_B1_3 = '0') then
           rf_RF_5_rd_load_reg <= '1';
           rf_RF_5_rd_opc_reg <= dst_B1_3(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(3, socket_RF_5_i1_bus_cntrl_reg'length);
+          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_5_i1_bus_cntrl_reg'length);
         elsif (conv_integer(unsigned(dst_B1_2(6 downto 3))) = 9 and squash_B1_2 = '0') then
           rf_RF_5_rd_load_reg <= '1';
           rf_RF_5_rd_opc_reg <= dst_B1_2(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(2, socket_RF_5_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1_1(6 downto 3))) = 9 and squash_B1_1 = '0') then
-          rf_RF_5_rd_load_reg <= '1';
-          rf_RF_5_rd_opc_reg <= dst_B1_1(2 downto 0);
-          socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(1, socket_RF_5_i1_bus_cntrl_reg'length);
-        elsif (conv_integer(unsigned(dst_B1(6 downto 3))) = 9 and squash_B1 = '0') then
-          rf_RF_5_rd_load_reg <= '1';
-          rf_RF_5_rd_opc_reg <= dst_B1(2 downto 0);
           socket_RF_5_i1_bus_cntrl_reg <= conv_std_logic_vector(0, socket_RF_5_i1_bus_cntrl_reg'length);
         else
           rf_RF_5_rd_load_reg <= '0';

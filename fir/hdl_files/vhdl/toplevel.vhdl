@@ -22,17 +22,61 @@ entity toplevel is
     fu_LSU_dmem_mem_en_x : out std_logic_vector(0 downto 0);
     fu_LSU_dmem_wr_en_x : out std_logic_vector(0 downto 0);
     fu_LSU_dmem_bytemask : out std_logic_vector(fu_LSU_dataw/8-1 downto 0);
-    fu_OUTPUT_ext_data : out std_logic_vector(7 downto 0);
-    fu_OUTPUT_ext_status : in std_logic_vector(fu_OUTPUT_statusw-1 downto 0);
-    fu_OUTPUT_ext_dv : out std_logic_vector(0 downto 0);
     fu_INPUT_ext_data : in std_logic_vector(7 downto 0);
     fu_INPUT_ext_status : in std_logic_vector(fu_INPUT_statusw-1 downto 0);
-    fu_INPUT_ext_rdack : out std_logic_vector(0 downto 0));
+    fu_INPUT_ext_rdack : out std_logic_vector(0 downto 0);
+    fu_OUTPUT_ext_data : out std_logic_vector(7 downto 0);
+    fu_OUTPUT_ext_status : in std_logic_vector(fu_OUTPUT_statusw-1 downto 0);
+    fu_OUTPUT_ext_dv : out std_logic_vector(0 downto 0));
 
 end toplevel;
 
 architecture structural of toplevel is
 
+  signal rf_RF_4_r1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_4_r1load_wire : std_logic;
+  signal rf_RF_4_r1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_4_t1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_4_t1load_wire : std_logic;
+  signal rf_RF_4_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_4_guard_wire : std_logic_vector(4 downto 0);
+  signal rf_RF_4_glock_wire : std_logic;
+  signal fu_LSU_t1data_wire : std_logic_vector(7 downto 0);
+  signal fu_LSU_t1load_wire : std_logic;
+  signal fu_LSU_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_LSU_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_LSU_o1load_wire : std_logic;
+  signal fu_LSU_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal fu_LSU_glock_wire : std_logic;
+  signal fu_MUL_t1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_t1load_wire : std_logic;
+  signal fu_MUL_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_o1load_wire : std_logic;
+  signal fu_MUL_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_glock_wire : std_logic;
+  signal rf_RF_5_r1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_5_r1load_wire : std_logic;
+  signal rf_RF_5_r1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_5_t1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_5_t1load_wire : std_logic;
+  signal rf_RF_5_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_5_guard_wire : std_logic_vector(4 downto 0);
+  signal rf_RF_5_glock_wire : std_logic;
+  signal inst_fetch_ra_out_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
+  signal inst_fetch_ra_in_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
+  signal inst_fetch_pc_in_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
+  signal inst_fetch_pc_load_wire : std_logic;
+  signal inst_fetch_ra_load_wire : std_logic;
+  signal inst_fetch_pc_opcode_wire : std_logic_vector(0 downto 0);
+  signal inst_fetch_fetch_en_wire : std_logic;
+  signal inst_fetch_glock_wire : std_logic;
+  signal inst_fetch_fetchblock_wire : std_logic_vector(IMEMWIDTHINMAUS*IMEMMAUWIDTH-1 downto 0);
+  signal decomp_fetch_en_wire : std_logic;
+  signal decomp_lock_wire : std_logic;
+  signal decomp_fetchblock_wire : std_logic_vector(IMEMWIDTHINMAUS*IMEMMAUWIDTH-1 downto 0);
+  signal decomp_instructionword_wire : std_logic_vector(INSTRUCTIONWIDTH-1 downto 0);
+  signal decomp_glock_wire : std_logic;
+  signal decomp_lock_r_wire : std_logic;
   signal inst_decoder_instructionword_wire : std_logic_vector(INSTRUCTIONWIDTH-1 downto 0);
   signal inst_decoder_pc_load_wire : std_logic;
   signal inst_decoder_ra_load_wire : std_logic;
@@ -58,10 +102,10 @@ architecture structural of toplevel is
   signal inst_decoder_socket_lsu_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_lsu_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal inst_decoder_socket_lsu_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_RF_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_RF_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_bool_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_bool_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal inst_decoder_socket_RF_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
+  signal inst_decoder_socket_RF_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_bool_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
+  signal inst_decoder_socket_bool_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal inst_decoder_socket_gcu_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_gcu_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_gcu_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
@@ -74,27 +118,27 @@ architecture structural of toplevel is
   signal inst_decoder_socket_MUL_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_MUL_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_MUL_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_0_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_0_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_RF_0_2_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_0_2_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_RF_2_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_2_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_RF_2_2_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_2_2_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal inst_decoder_socket_RF_0_1_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_RF_0_1_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
+  signal inst_decoder_socket_RF_0_2_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_RF_0_2_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
+  signal inst_decoder_socket_RF_2_1_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_RF_2_1_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
+  signal inst_decoder_socket_RF_2_2_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_RF_2_2_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal inst_decoder_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal inst_decoder_socket_INPUT_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_INPUT_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal inst_decoder_socket_INPUT_o2_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_5_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
-  signal inst_decoder_socket_RF_5_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_ADDSH_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_ADDSH_1_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_socket_ADDSH_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal inst_decoder_socket_RF_5_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
+  signal inst_decoder_socket_RF_5_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal inst_decoder_socket_MUL_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_MUL_1_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_socket_MUL_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal inst_decoder_socket_ADDSH_1_i3_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal inst_decoder_socket_ADDSH_1_i4_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal inst_decoder_socket_ADDSH_1_o2_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal inst_decoder_fu_LSU_in1t_load_wire : std_logic;
   signal inst_decoder_fu_LSU_in2_load_wire : std_logic;
   signal inst_decoder_fu_LSU_opc_wire : std_logic_vector(2 downto 0);
@@ -110,11 +154,11 @@ architecture structural of toplevel is
   signal inst_decoder_fu_OUTPUT_opc_wire : std_logic_vector(0 downto 0);
   signal inst_decoder_fu_INPUT_in1t_load_wire : std_logic;
   signal inst_decoder_fu_INPUT_opc_wire : std_logic_vector(0 downto 0);
+  signal inst_decoder_fu_MUL_1_in1t_load_wire : std_logic;
+  signal inst_decoder_fu_MUL_1_in2_load_wire : std_logic;
   signal inst_decoder_fu_ADDSH_1_in1t_load_wire : std_logic;
   signal inst_decoder_fu_ADDSH_1_in2_load_wire : std_logic;
   signal inst_decoder_fu_ADDSH_1_opc_wire : std_logic_vector(2 downto 0);
-  signal inst_decoder_fu_MUL_1_in1t_load_wire : std_logic;
-  signal inst_decoder_fu_MUL_1_in2_load_wire : std_logic;
   signal inst_decoder_rf_RF_0_wr_load_wire : std_logic;
   signal inst_decoder_rf_RF_0_wr_opc_wire : std_logic_vector(2 downto 0);
   signal inst_decoder_rf_RF_0_rd_load_wire : std_logic;
@@ -146,92 +190,6 @@ architecture structural of toplevel is
   signal inst_decoder_rf_guard_BOOL_0_wire : std_logic;
   signal inst_decoder_rf_guard_BOOL_1_wire : std_logic;
   signal inst_decoder_glock_wire : std_logic;
-  signal fu_OUTPUT_t1data_wire : std_logic_vector(7 downto 0);
-  signal fu_OUTPUT_t1load_wire : std_logic;
-  signal fu_OUTPUT_r1data_wire : std_logic_vector(7 downto 0);
-  signal fu_OUTPUT_t1opcode_wire : std_logic_vector(0 downto 0);
-  signal fu_OUTPUT_glock_wire : std_logic;
-  signal rf_RF_0_r1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_0_r1load_wire : std_logic;
-  signal rf_RF_0_r1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_0_t1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_0_t1load_wire : std_logic;
-  signal rf_RF_0_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_0_guard_wire : std_logic_vector(4 downto 0);
-  signal rf_RF_0_glock_wire : std_logic;
-  signal fu_INPUT_t1data_wire : std_logic_vector(7 downto 0);
-  signal fu_INPUT_t1load_wire : std_logic;
-  signal fu_INPUT_r2data_wire : std_logic_vector(7 downto 0);
-  signal fu_INPUT_r1data_wire : std_logic_vector(7 downto 0);
-  signal fu_INPUT_t1opcode_wire : std_logic_vector(0 downto 0);
-  signal fu_INPUT_glock_wire : std_logic;
-  signal rf_RF_1_r1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_1_r1load_wire : std_logic;
-  signal rf_RF_1_r1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_1_t1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_1_t1load_wire : std_logic;
-  signal rf_RF_1_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_1_guard_wire : std_logic_vector(4 downto 0);
-  signal rf_RF_1_glock_wire : std_logic;
-  signal inst_fetch_ra_out_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
-  signal inst_fetch_ra_in_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
-  signal inst_fetch_pc_in_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
-  signal inst_fetch_pc_load_wire : std_logic;
-  signal inst_fetch_ra_load_wire : std_logic;
-  signal inst_fetch_pc_opcode_wire : std_logic_vector(0 downto 0);
-  signal inst_fetch_fetch_en_wire : std_logic;
-  signal inst_fetch_glock_wire : std_logic;
-  signal inst_fetch_fetchblock_wire : std_logic_vector(IMEMWIDTHINMAUS*IMEMMAUWIDTH-1 downto 0);
-  signal decomp_fetch_en_wire : std_logic;
-  signal decomp_lock_wire : std_logic;
-  signal decomp_fetchblock_wire : std_logic_vector(IMEMWIDTHINMAUS*IMEMMAUWIDTH-1 downto 0);
-  signal decomp_instructionword_wire : std_logic_vector(INSTRUCTIONWIDTH-1 downto 0);
-  signal decomp_glock_wire : std_logic;
-  signal decomp_lock_r_wire : std_logic;
-  signal fu_ALU_t1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ALU_t1load_wire : std_logic;
-  signal fu_ALU_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ALU_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ALU_o1load_wire : std_logic;
-  signal fu_ALU_t1opcode_wire : std_logic_vector(3 downto 0);
-  signal fu_ALU_glock_wire : std_logic;
-  signal rf_BOOL_r1data_wire : std_logic_vector(0 downto 0);
-  signal rf_BOOL_r1load_wire : std_logic;
-  signal rf_BOOL_r1opcode_wire : std_logic_vector(0 downto 0);
-  signal rf_BOOL_t1data_wire : std_logic_vector(0 downto 0);
-  signal rf_BOOL_t1load_wire : std_logic;
-  signal rf_BOOL_t1opcode_wire : std_logic_vector(0 downto 0);
-  signal rf_BOOL_guard_wire : std_logic_vector(1 downto 0);
-  signal rf_BOOL_glock_wire : std_logic;
-  signal fu_MUL_t1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_t1load_wire : std_logic;
-  signal fu_MUL_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_o1load_wire : std_logic;
-  signal fu_MUL_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_glock_wire : std_logic;
-  signal fu_LSU_t1data_wire : std_logic_vector(7 downto 0);
-  signal fu_LSU_t1load_wire : std_logic;
-  signal fu_LSU_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_LSU_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_LSU_o1load_wire : std_logic;
-  signal fu_LSU_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal fu_LSU_glock_wire : std_logic;
-  signal rf_RF_4_r1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_4_r1load_wire : std_logic;
-  signal rf_RF_4_r1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_4_t1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_4_t1load_wire : std_logic;
-  signal rf_RF_4_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_4_guard_wire : std_logic_vector(4 downto 0);
-  signal rf_RF_4_glock_wire : std_logic;
-  signal rf_RF_2_r1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_2_r1load_wire : std_logic;
-  signal rf_RF_2_r1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_2_t1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_2_t1load_wire : std_logic;
-  signal rf_RF_2_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_2_guard_wire : std_logic_vector(4 downto 0);
-  signal rf_RF_2_glock_wire : std_logic;
   signal ic_socket_lsu_i1_data_wire : std_logic_vector(7 downto 0);
   signal ic_socket_lsu_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_lsu_o1_data0_wire : std_logic_vector(31 downto 0);
@@ -239,13 +197,13 @@ architecture structural of toplevel is
   signal ic_socket_lsu_i2_data_wire : std_logic_vector(31 downto 0);
   signal ic_socket_lsu_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_RF_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_RF_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_RF_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_bool_i1_data_wire : std_logic_vector(0 downto 0);
-  signal ic_socket_bool_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_bool_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_bool_o1_data0_wire : std_logic_vector(0 downto 0);
-  signal ic_socket_bool_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_bool_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_gcu_i1_data_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
   signal ic_socket_gcu_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_gcu_i2_data_wire : std_logic_vector(IMEMADDRWIDTH-1 downto 0);
@@ -271,21 +229,21 @@ architecture structural of toplevel is
   signal ic_socket_MUL_o1_data0_wire : std_logic_vector(31 downto 0);
   signal ic_socket_MUL_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal ic_socket_RF_0_1_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_0_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_0_1_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_RF_0_1_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_0_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_RF_0_1_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_RF_0_2_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_0_2_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_0_2_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_RF_0_2_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_0_2_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_RF_0_2_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_RF_2_1_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_2_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_2_1_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_RF_2_1_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_2_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_RF_2_1_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_RF_2_2_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_2_2_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_2_2_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_RF_2_2_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_2_2_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_RF_2_2_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_data_wire : std_logic_vector(7 downto 0);
   signal ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_data0_wire : std_logic_vector(7 downto 0);
@@ -297,21 +255,21 @@ architecture structural of toplevel is
   signal ic_socket_INPUT_o2_data0_wire : std_logic_vector(7 downto 0);
   signal ic_socket_INPUT_o2_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal ic_socket_RF_5_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_5_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_5_o1_bus_cntrl_wire : std_logic_vector(3 downto 0);
   signal ic_socket_RF_5_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_RF_5_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal ic_socket_ADDSH_1_i1_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_ADDSH_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal ic_socket_ADDSH_1_i2_data_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_ADDSH_1_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
-  signal ic_socket_ADDSH_1_o1_data0_wire : std_logic_vector(31 downto 0);
-  signal ic_socket_ADDSH_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_RF_5_i1_bus_cntrl_wire : std_logic_vector(1 downto 0);
   signal ic_socket_MUL_1_i1_data_wire : std_logic_vector(31 downto 0);
   signal ic_socket_MUL_1_i1_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_MUL_1_i2_data_wire : std_logic_vector(31 downto 0);
   signal ic_socket_MUL_1_i2_bus_cntrl_wire : std_logic_vector(2 downto 0);
   signal ic_socket_MUL_1_o1_data0_wire : std_logic_vector(31 downto 0);
   signal ic_socket_MUL_1_o1_bus_cntrl_wire : std_logic_vector(7 downto 0);
+  signal ic_socket_ADDSH_1_i3_data_wire : std_logic_vector(31 downto 0);
+  signal ic_socket_ADDSH_1_i3_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_ADDSH_1_i4_data_wire : std_logic_vector(31 downto 0);
+  signal ic_socket_ADDSH_1_i4_bus_cntrl_wire : std_logic_vector(2 downto 0);
+  signal ic_socket_ADDSH_1_o2_data0_wire : std_logic_vector(31 downto 0);
+  signal ic_socket_ADDSH_1_o2_bus_cntrl_wire : std_logic_vector(7 downto 0);
   signal ic_simm_B1_wire : std_logic_vector(31 downto 0);
   signal ic_simm_cntrl_B1_wire : std_logic_vector(0 downto 0);
   signal ic_simm_B1_1_wire : std_logic_vector(31 downto 0);
@@ -328,6 +286,42 @@ architecture structural of toplevel is
   signal ic_simm_cntrl_B1_6_wire : std_logic_vector(0 downto 0);
   signal ic_simm_B1_7_wire : std_logic_vector(31 downto 0);
   signal ic_simm_cntrl_B1_7_wire : std_logic_vector(0 downto 0);
+  signal rf_RF_2_r1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_2_r1load_wire : std_logic;
+  signal rf_RF_2_r1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_2_t1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_2_t1load_wire : std_logic;
+  signal rf_RF_2_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_2_guard_wire : std_logic_vector(4 downto 0);
+  signal rf_RF_2_glock_wire : std_logic;
+  signal fu_ADDSH_1_t1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_1_t1load_wire : std_logic;
+  signal fu_ADDSH_1_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_1_o1load_wire : std_logic;
+  signal fu_ADDSH_1_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_1_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal fu_ADDSH_1_glock_wire : std_logic;
+  signal rf_RF_0_r1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_0_r1load_wire : std_logic;
+  signal rf_RF_0_r1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_0_t1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_0_t1load_wire : std_logic;
+  signal rf_RF_0_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_0_guard_wire : std_logic_vector(4 downto 0);
+  signal rf_RF_0_glock_wire : std_logic;
+  signal fu_MUL_1_t1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_1_t1load_wire : std_logic;
+  signal fu_MUL_1_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_1_o1load_wire : std_logic;
+  signal fu_MUL_1_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_MUL_1_glock_wire : std_logic;
+  signal fu_ADDSH_t1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_t1load_wire : std_logic;
+  signal fu_ADDSH_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_o1load_wire : std_logic;
+  signal fu_ADDSH_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ADDSH_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal fu_ADDSH_glock_wire : std_logic;
   signal rf_RF_3_r1data_wire : std_logic_vector(31 downto 0);
   signal rf_RF_3_r1load_wire : std_logic;
   signal rf_RF_3_r1opcode_wire : std_logic_vector(2 downto 0);
@@ -336,34 +330,40 @@ architecture structural of toplevel is
   signal rf_RF_3_t1opcode_wire : std_logic_vector(2 downto 0);
   signal rf_RF_3_guard_wire : std_logic_vector(4 downto 0);
   signal rf_RF_3_glock_wire : std_logic;
-  signal fu_ADDSH_t1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_t1load_wire : std_logic;
-  signal fu_ADDSH_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_o1load_wire : std_logic;
-  signal fu_ADDSH_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal fu_ADDSH_glock_wire : std_logic;
-  signal rf_RF_5_r1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_5_r1load_wire : std_logic;
-  signal rf_RF_5_r1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_5_t1data_wire : std_logic_vector(31 downto 0);
-  signal rf_RF_5_t1load_wire : std_logic;
-  signal rf_RF_5_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal rf_RF_5_guard_wire : std_logic_vector(4 downto 0);
-  signal rf_RF_5_glock_wire : std_logic;
-  signal fu_ADDSH_1_t1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_1_t1load_wire : std_logic;
-  signal fu_ADDSH_1_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_1_o1load_wire : std_logic;
-  signal fu_ADDSH_1_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_ADDSH_1_t1opcode_wire : std_logic_vector(2 downto 0);
-  signal fu_ADDSH_1_glock_wire : std_logic;
-  signal fu_MUL_1_t1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_1_t1load_wire : std_logic;
-  signal fu_MUL_1_o1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_1_o1load_wire : std_logic;
-  signal fu_MUL_1_r1data_wire : std_logic_vector(31 downto 0);
-  signal fu_MUL_1_glock_wire : std_logic;
+  signal fu_OUTPUT_t1data_wire : std_logic_vector(7 downto 0);
+  signal fu_OUTPUT_t1load_wire : std_logic;
+  signal fu_OUTPUT_r1data_wire : std_logic_vector(7 downto 0);
+  signal fu_OUTPUT_t1opcode_wire : std_logic_vector(0 downto 0);
+  signal fu_OUTPUT_glock_wire : std_logic;
+  signal fu_INPUT_t1data_wire : std_logic_vector(7 downto 0);
+  signal fu_INPUT_t1load_wire : std_logic;
+  signal fu_INPUT_r2data_wire : std_logic_vector(7 downto 0);
+  signal fu_INPUT_r1data_wire : std_logic_vector(7 downto 0);
+  signal fu_INPUT_t1opcode_wire : std_logic_vector(0 downto 0);
+  signal fu_INPUT_glock_wire : std_logic;
+  signal rf_RF_1_r1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_1_r1load_wire : std_logic;
+  signal rf_RF_1_r1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_1_t1data_wire : std_logic_vector(31 downto 0);
+  signal rf_RF_1_t1load_wire : std_logic;
+  signal rf_RF_1_t1opcode_wire : std_logic_vector(2 downto 0);
+  signal rf_RF_1_guard_wire : std_logic_vector(4 downto 0);
+  signal rf_RF_1_glock_wire : std_logic;
+  signal fu_ALU_t1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ALU_t1load_wire : std_logic;
+  signal fu_ALU_r1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ALU_o1data_wire : std_logic_vector(31 downto 0);
+  signal fu_ALU_o1load_wire : std_logic;
+  signal fu_ALU_t1opcode_wire : std_logic_vector(3 downto 0);
+  signal fu_ALU_glock_wire : std_logic;
+  signal rf_BOOL_r1data_wire : std_logic_vector(0 downto 0);
+  signal rf_BOOL_r1load_wire : std_logic;
+  signal rf_BOOL_r1opcode_wire : std_logic_vector(0 downto 0);
+  signal rf_BOOL_t1data_wire : std_logic_vector(0 downto 0);
+  signal rf_BOOL_t1load_wire : std_logic;
+  signal rf_BOOL_t1opcode_wire : std_logic_vector(0 downto 0);
+  signal rf_BOOL_guard_wire : std_logic_vector(1 downto 0);
+  signal rf_BOOL_glock_wire : std_logic;
   signal ground_signal : std_logic_vector(4 downto 0);
 
   component toplevel_ifetch
@@ -427,10 +427,10 @@ architecture structural of toplevel is
       socket_lsu_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_lsu_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
       socket_lsu_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_RF_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_RF_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_bool_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_bool_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
+      socket_RF_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
+      socket_RF_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_bool_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
+      socket_bool_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
       socket_gcu_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_gcu_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_gcu_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
@@ -443,27 +443,27 @@ architecture structural of toplevel is
       socket_MUL_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_MUL_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_MUL_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_0_1_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_0_1_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_RF_0_2_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_0_2_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_RF_2_1_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_2_1_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_RF_2_2_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_2_2_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
+      socket_RF_0_1_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_RF_0_1_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
+      socket_RF_0_2_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_RF_0_2_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
+      socket_RF_2_1_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_RF_2_1_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
+      socket_RF_2_2_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_RF_2_2_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
       socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_bus_cntrl : out std_logic_vector(8-1 downto 0);
       socket_INPUT_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_INPUT_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
       socket_INPUT_o2_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_5_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
-      socket_RF_5_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
+      socket_RF_5_o1_bus_cntrl : out std_logic_vector(4-1 downto 0);
+      socket_RF_5_i1_bus_cntrl : out std_logic_vector(2-1 downto 0);
       socket_MUL_1_i1_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_MUL_1_i2_bus_cntrl : out std_logic_vector(3-1 downto 0);
       socket_MUL_1_o1_bus_cntrl : out std_logic_vector(8-1 downto 0);
+      socket_ADDSH_1_i3_bus_cntrl : out std_logic_vector(3-1 downto 0);
+      socket_ADDSH_1_i4_bus_cntrl : out std_logic_vector(3-1 downto 0);
+      socket_ADDSH_1_o2_bus_cntrl : out std_logic_vector(8-1 downto 0);
       fu_LSU_in1t_load : out std_logic;
       fu_LSU_in2_load : out std_logic;
       fu_LSU_opc : out std_logic_vector(3-1 downto 0);
@@ -479,11 +479,11 @@ architecture structural of toplevel is
       fu_OUTPUT_opc : out std_logic_vector(1-1 downto 0);
       fu_INPUT_in1t_load : out std_logic;
       fu_INPUT_opc : out std_logic_vector(1-1 downto 0);
+      fu_MUL_1_in1t_load : out std_logic;
+      fu_MUL_1_in2_load : out std_logic;
       fu_ADDSH_1_in1t_load : out std_logic;
       fu_ADDSH_1_in2_load : out std_logic;
       fu_ADDSH_1_opc : out std_logic_vector(3-1 downto 0);
-      fu_MUL_1_in1t_load : out std_logic;
-      fu_MUL_1_in2_load : out std_logic;
       rf_RF_0_wr_load : out std_logic;
       rf_RF_0_wr_opc : out std_logic_vector(3-1 downto 0);
       rf_RF_0_rd_load : out std_logic;
@@ -539,22 +539,6 @@ architecture structural of toplevel is
       glock : in std_logic);
   end component;
 
-  component fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1
-    generic (
-      dataw : integer;
-      shiftw : integer);
-    port (
-      t1data : in std_logic_vector(dataw-1 downto 0);
-      t1load : in std_logic;
-      r1data : out std_logic_vector(dataw-1 downto 0);
-      o1data : in std_logic_vector(dataw-1 downto 0);
-      o1load : in std_logic;
-      t1opcode : in std_logic_vector(4-1 downto 0);
-      clk : in std_logic;
-      rstx : in std_logic;
-      glock : in std_logic);
-  end component;
-
   component fu_add_shl_shr_shru_sub_always_1
     generic (
       dataw : integer;
@@ -566,6 +550,22 @@ architecture structural of toplevel is
       o1load : in std_logic;
       r1data : out std_logic_vector(busw-1 downto 0);
       t1opcode : in std_logic_vector(3-1 downto 0);
+      clk : in std_logic;
+      rstx : in std_logic;
+      glock : in std_logic);
+  end component;
+
+  component fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1
+    generic (
+      dataw : integer;
+      shiftw : integer);
+    port (
+      t1data : in std_logic_vector(dataw-1 downto 0);
+      t1load : in std_logic;
+      r1data : out std_logic_vector(dataw-1 downto 0);
+      o1data : in std_logic_vector(dataw-1 downto 0);
+      o1load : in std_logic;
+      t1opcode : in std_logic_vector(4-1 downto 0);
       clk : in std_logic;
       rstx : in std_logic;
       glock : in std_logic);
@@ -586,24 +586,6 @@ architecture structural of toplevel is
       glock : in std_logic);
   end component;
 
-  component fifo_stream_out_1
-    generic (
-      dataw : integer;
-      busw : integer;
-      statusw : integer);
-    port (
-      t1data : in std_logic_vector(8-1 downto 0);
-      t1load : in std_logic;
-      r1data : out std_logic_vector(8-1 downto 0);
-      t1opcode : in std_logic_vector(1-1 downto 0);
-      ext_data : out std_logic_vector(8-1 downto 0);
-      ext_status : in std_logic_vector(statusw-1 downto 0);
-      ext_dv : out std_logic_vector(1-1 downto 0);
-      clk : in std_logic;
-      rstx : in std_logic;
-      glock : in std_logic);
-  end component;
-
   component fifo_stream_in_1
     generic (
       dataw : integer;
@@ -618,6 +600,24 @@ architecture structural of toplevel is
       ext_data : in std_logic_vector(8-1 downto 0);
       ext_status : in std_logic_vector(statusw-1 downto 0);
       ext_rdack : out std_logic_vector(1-1 downto 0);
+      clk : in std_logic;
+      rstx : in std_logic;
+      glock : in std_logic);
+  end component;
+
+  component fifo_stream_out_1
+    generic (
+      dataw : integer;
+      busw : integer;
+      statusw : integer);
+    port (
+      t1data : in std_logic_vector(8-1 downto 0);
+      t1load : in std_logic;
+      r1data : out std_logic_vector(8-1 downto 0);
+      t1opcode : in std_logic_vector(1-1 downto 0);
+      ext_data : out std_logic_vector(8-1 downto 0);
+      ext_status : in std_logic_vector(statusw-1 downto 0);
+      ext_dv : out std_logic_vector(1-1 downto 0);
       clk : in std_logic;
       rstx : in std_logic;
       glock : in std_logic);
@@ -666,13 +666,13 @@ architecture structural of toplevel is
       socket_lsu_i2_data : out std_logic_vector(32-1 downto 0);
       socket_lsu_i2_bus_cntrl : in std_logic_vector(3-1 downto 0);
       socket_RF_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_RF_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_RF_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_bool_i1_data : out std_logic_vector(1-1 downto 0);
-      socket_bool_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_bool_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_bool_o1_data0 : in std_logic_vector(1-1 downto 0);
-      socket_bool_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_bool_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_gcu_i1_data : out std_logic_vector(IMEMADDRWIDTH-1 downto 0);
       socket_gcu_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
       socket_gcu_i2_data : out std_logic_vector(IMEMADDRWIDTH-1 downto 0);
@@ -698,21 +698,21 @@ architecture structural of toplevel is
       socket_MUL_o1_data0 : in std_logic_vector(32-1 downto 0);
       socket_MUL_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
       socket_RF_0_1_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_0_1_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_0_1_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_RF_0_1_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_0_1_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_RF_0_1_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_RF_0_2_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_0_2_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_0_2_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_RF_0_2_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_0_2_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_RF_0_2_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_RF_2_1_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_2_1_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_2_1_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_RF_2_1_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_2_1_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_RF_2_1_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_RF_2_2_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_2_2_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_2_2_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_RF_2_2_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_2_2_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_RF_2_2_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_data : out std_logic_vector(8-1 downto 0);
       socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl : in std_logic_vector(3-1 downto 0);
       socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_data0 : in std_logic_vector(8-1 downto 0);
@@ -724,21 +724,21 @@ architecture structural of toplevel is
       socket_INPUT_o2_data0 : in std_logic_vector(8-1 downto 0);
       socket_INPUT_o2_bus_cntrl : in std_logic_vector(8-1 downto 0);
       socket_RF_5_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_RF_5_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_5_o1_bus_cntrl : in std_logic_vector(4-1 downto 0);
       socket_RF_5_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_RF_5_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_i1_data : out std_logic_vector(32-1 downto 0);
-      socket_ADDSH_1_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_i2_data : out std_logic_vector(32-1 downto 0);
-      socket_ADDSH_1_i2_bus_cntrl : in std_logic_vector(3-1 downto 0);
-      socket_ADDSH_1_o1_data0 : in std_logic_vector(32-1 downto 0);
-      socket_ADDSH_1_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_RF_5_i1_bus_cntrl : in std_logic_vector(2-1 downto 0);
       socket_MUL_1_i1_data : out std_logic_vector(32-1 downto 0);
       socket_MUL_1_i1_bus_cntrl : in std_logic_vector(3-1 downto 0);
       socket_MUL_1_i2_data : out std_logic_vector(32-1 downto 0);
       socket_MUL_1_i2_bus_cntrl : in std_logic_vector(3-1 downto 0);
       socket_MUL_1_o1_data0 : in std_logic_vector(32-1 downto 0);
       socket_MUL_1_o1_bus_cntrl : in std_logic_vector(8-1 downto 0);
+      socket_ADDSH_1_i3_data : out std_logic_vector(32-1 downto 0);
+      socket_ADDSH_1_i3_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_ADDSH_1_i4_data : out std_logic_vector(32-1 downto 0);
+      socket_ADDSH_1_i4_bus_cntrl : in std_logic_vector(3-1 downto 0);
+      socket_ADDSH_1_o2_data0 : in std_logic_vector(32-1 downto 0);
+      socket_ADDSH_1_o2_bus_cntrl : in std_logic_vector(8-1 downto 0);
       simm_B1 : in std_logic_vector(32-1 downto 0);
       simm_cntrl_B1 : in std_logic_vector(1-1 downto 0);
       simm_B1_1 : in std_logic_vector(32-1 downto 0);
@@ -822,12 +822,12 @@ begin
   ic_socket_INPUT_o2_bus_cntrl_wire <= inst_decoder_socket_INPUT_o2_bus_cntrl_wire;
   ic_socket_RF_5_o1_bus_cntrl_wire <= inst_decoder_socket_RF_5_o1_bus_cntrl_wire;
   ic_socket_RF_5_i1_bus_cntrl_wire <= inst_decoder_socket_RF_5_i1_bus_cntrl_wire;
-  ic_socket_ADDSH_1_i1_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_i1_bus_cntrl_wire;
-  ic_socket_ADDSH_1_i2_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_i2_bus_cntrl_wire;
-  ic_socket_ADDSH_1_o1_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_o1_bus_cntrl_wire;
   ic_socket_MUL_1_i1_bus_cntrl_wire <= inst_decoder_socket_MUL_1_i1_bus_cntrl_wire;
   ic_socket_MUL_1_i2_bus_cntrl_wire <= inst_decoder_socket_MUL_1_i2_bus_cntrl_wire;
   ic_socket_MUL_1_o1_bus_cntrl_wire <= inst_decoder_socket_MUL_1_o1_bus_cntrl_wire;
+  ic_socket_ADDSH_1_i3_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_i3_bus_cntrl_wire;
+  ic_socket_ADDSH_1_i4_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_i4_bus_cntrl_wire;
+  ic_socket_ADDSH_1_o2_bus_cntrl_wire <= inst_decoder_socket_ADDSH_1_o2_bus_cntrl_wire;
   fu_LSU_t1load_wire <= inst_decoder_fu_LSU_in1t_load_wire;
   fu_LSU_o1load_wire <= inst_decoder_fu_LSU_in2_load_wire;
   fu_LSU_t1opcode_wire <= inst_decoder_fu_LSU_opc_wire;
@@ -843,11 +843,11 @@ begin
   fu_OUTPUT_t1opcode_wire <= inst_decoder_fu_OUTPUT_opc_wire;
   fu_INPUT_t1load_wire <= inst_decoder_fu_INPUT_in1t_load_wire;
   fu_INPUT_t1opcode_wire <= inst_decoder_fu_INPUT_opc_wire;
+  fu_MUL_1_t1load_wire <= inst_decoder_fu_MUL_1_in1t_load_wire;
+  fu_MUL_1_o1load_wire <= inst_decoder_fu_MUL_1_in2_load_wire;
   fu_ADDSH_1_t1load_wire <= inst_decoder_fu_ADDSH_1_in1t_load_wire;
   fu_ADDSH_1_o1load_wire <= inst_decoder_fu_ADDSH_1_in2_load_wire;
   fu_ADDSH_1_t1opcode_wire <= inst_decoder_fu_ADDSH_1_opc_wire;
-  fu_MUL_1_t1load_wire <= inst_decoder_fu_MUL_1_in1t_load_wire;
-  fu_MUL_1_o1load_wire <= inst_decoder_fu_MUL_1_in2_load_wire;
   rf_RF_0_t1load_wire <= inst_decoder_rf_RF_0_wr_load_wire;
   rf_RF_0_t1opcode_wire <= inst_decoder_rf_RF_0_wr_opc_wire;
   rf_RF_0_r1load_wire <= inst_decoder_rf_RF_0_rd_load_wire;
@@ -884,8 +884,8 @@ begin
   fu_MUL_glock_wire <= inst_decoder_glock_wire;
   fu_OUTPUT_glock_wire <= inst_decoder_glock_wire;
   fu_INPUT_glock_wire <= inst_decoder_glock_wire;
-  fu_ADDSH_1_glock_wire <= inst_decoder_glock_wire;
   fu_MUL_1_glock_wire <= inst_decoder_glock_wire;
+  fu_ADDSH_1_glock_wire <= inst_decoder_glock_wire;
   rf_RF_0_glock_wire <= inst_decoder_glock_wire;
   rf_BOOL_glock_wire <= inst_decoder_glock_wire;
   rf_RF_1_glock_wire <= inst_decoder_glock_wire;
@@ -896,26 +896,26 @@ begin
   fu_LSU_t1data_wire <= ic_socket_lsu_i1_data_wire;
   ic_socket_lsu_o1_data0_wire <= fu_LSU_r1data_wire;
   fu_LSU_o1data_wire <= ic_socket_lsu_i2_data_wire;
-  fu_ALU_t1data_wire <= ic_socket_ALU_i1_data_wire;
-  ic_socket_ALU_o1_data0_wire <= fu_ALU_r1data_wire;
-  fu_ALU_o1data_wire <= ic_socket_ALU_i2_data_wire;
   fu_ADDSH_t1data_wire <= ic_socket_ADDSH_i1_data_wire;
   fu_ADDSH_o1data_wire <= ic_socket_ADDSH_i2_data_wire;
   ic_socket_ADDSH_o1_data0_wire <= fu_ADDSH_r1data_wire;
+  fu_ALU_t1data_wire <= ic_socket_ALU_i1_data_wire;
+  ic_socket_ALU_o1_data0_wire <= fu_ALU_r1data_wire;
+  fu_ALU_o1data_wire <= ic_socket_ALU_i2_data_wire;
   fu_MUL_t1data_wire <= ic_socket_MUL_i1_data_wire;
   fu_MUL_o1data_wire <= ic_socket_MUL_i2_data_wire;
   ic_socket_MUL_o1_data0_wire <= fu_MUL_r1data_wire;
-  fu_OUTPUT_t1data_wire <= ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_data_wire;
-  ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_data0_wire <= fu_OUTPUT_r1data_wire;
   fu_INPUT_t1data_wire <= ic_socket_INPUT_i1_data_wire;
   ic_socket_INPUT_o1_data0_wire <= fu_INPUT_r2data_wire;
   ic_socket_INPUT_o2_data0_wire <= fu_INPUT_r1data_wire;
-  fu_ADDSH_1_t1data_wire <= ic_socket_ADDSH_1_i1_data_wire;
-  fu_ADDSH_1_o1data_wire <= ic_socket_ADDSH_1_i2_data_wire;
-  ic_socket_ADDSH_1_o1_data0_wire <= fu_ADDSH_1_r1data_wire;
+  fu_OUTPUT_t1data_wire <= ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_data_wire;
+  ic_socket_fifo_u8_stream_out_fifo_u8_stream_out_status_o2_data0_wire <= fu_OUTPUT_r1data_wire;
   fu_MUL_1_t1data_wire <= ic_socket_MUL_1_i1_data_wire;
   fu_MUL_1_o1data_wire <= ic_socket_MUL_1_i2_data_wire;
   ic_socket_MUL_1_o1_data0_wire <= fu_MUL_1_r1data_wire;
+  fu_ADDSH_1_t1data_wire <= ic_socket_ADDSH_1_i3_data_wire;
+  fu_ADDSH_1_o1data_wire <= ic_socket_ADDSH_1_i4_data_wire;
+  ic_socket_ADDSH_1_o2_data0_wire <= fu_ADDSH_1_r1data_wire;
   ic_socket_RF_o1_data0_wire <= rf_RF_0_r1data_wire;
   rf_RF_0_t1data_wire <= ic_socket_RF_i1_data_wire;
   ic_socket_bool_o1_data0_wire <= rf_BOOL_r1data_wire;
@@ -1022,12 +1022,12 @@ begin
       socket_INPUT_o2_bus_cntrl => inst_decoder_socket_INPUT_o2_bus_cntrl_wire,
       socket_RF_5_o1_bus_cntrl => inst_decoder_socket_RF_5_o1_bus_cntrl_wire,
       socket_RF_5_i1_bus_cntrl => inst_decoder_socket_RF_5_i1_bus_cntrl_wire,
-      socket_ADDSH_1_i1_bus_cntrl => inst_decoder_socket_ADDSH_1_i1_bus_cntrl_wire,
-      socket_ADDSH_1_i2_bus_cntrl => inst_decoder_socket_ADDSH_1_i2_bus_cntrl_wire,
-      socket_ADDSH_1_o1_bus_cntrl => inst_decoder_socket_ADDSH_1_o1_bus_cntrl_wire,
       socket_MUL_1_i1_bus_cntrl => inst_decoder_socket_MUL_1_i1_bus_cntrl_wire,
       socket_MUL_1_i2_bus_cntrl => inst_decoder_socket_MUL_1_i2_bus_cntrl_wire,
       socket_MUL_1_o1_bus_cntrl => inst_decoder_socket_MUL_1_o1_bus_cntrl_wire,
+      socket_ADDSH_1_i3_bus_cntrl => inst_decoder_socket_ADDSH_1_i3_bus_cntrl_wire,
+      socket_ADDSH_1_i4_bus_cntrl => inst_decoder_socket_ADDSH_1_i4_bus_cntrl_wire,
+      socket_ADDSH_1_o2_bus_cntrl => inst_decoder_socket_ADDSH_1_o2_bus_cntrl_wire,
       fu_LSU_in1t_load => inst_decoder_fu_LSU_in1t_load_wire,
       fu_LSU_in2_load => inst_decoder_fu_LSU_in2_load_wire,
       fu_LSU_opc => inst_decoder_fu_LSU_opc_wire,
@@ -1043,11 +1043,11 @@ begin
       fu_OUTPUT_opc => inst_decoder_fu_OUTPUT_opc_wire,
       fu_INPUT_in1t_load => inst_decoder_fu_INPUT_in1t_load_wire,
       fu_INPUT_opc => inst_decoder_fu_INPUT_opc_wire,
+      fu_MUL_1_in1t_load => inst_decoder_fu_MUL_1_in1t_load_wire,
+      fu_MUL_1_in2_load => inst_decoder_fu_MUL_1_in2_load_wire,
       fu_ADDSH_1_in1t_load => inst_decoder_fu_ADDSH_1_in1t_load_wire,
       fu_ADDSH_1_in2_load => inst_decoder_fu_ADDSH_1_in2_load_wire,
       fu_ADDSH_1_opc => inst_decoder_fu_ADDSH_1_opc_wire,
-      fu_MUL_1_in1t_load => inst_decoder_fu_MUL_1_in1t_load_wire,
-      fu_MUL_1_in2_load => inst_decoder_fu_MUL_1_in2_load_wire,
       rf_RF_0_wr_load => inst_decoder_rf_RF_0_wr_load_wire,
       rf_RF_0_wr_opc => inst_decoder_rf_RF_0_wr_opc_wire,
       rf_RF_0_rd_load => inst_decoder_rf_RF_0_rd_load_wire,
@@ -1101,21 +1101,6 @@ begin
       rstx => rstx,
       glock => fu_LSU_glock_wire);
 
-  fu_ALU : fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1
-    generic map (
-      dataw => 32,
-      shiftw => 5)
-    port map (
-      t1data => fu_ALU_t1data_wire,
-      t1load => fu_ALU_t1load_wire,
-      r1data => fu_ALU_r1data_wire,
-      o1data => fu_ALU_o1data_wire,
-      o1load => fu_ALU_o1load_wire,
-      t1opcode => fu_ALU_t1opcode_wire,
-      clk => clk,
-      rstx => rstx,
-      glock => fu_ALU_glock_wire);
-
   fu_ADDSH : fu_add_shl_shr_shru_sub_always_1
     generic map (
       dataw => 32,
@@ -1131,6 +1116,21 @@ begin
       rstx => rstx,
       glock => fu_ADDSH_glock_wire);
 
+  fu_ALU : fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1
+    generic map (
+      dataw => 32,
+      shiftw => 5)
+    port map (
+      t1data => fu_ALU_t1data_wire,
+      t1load => fu_ALU_t1load_wire,
+      r1data => fu_ALU_r1data_wire,
+      o1data => fu_ALU_o1data_wire,
+      o1load => fu_ALU_o1load_wire,
+      t1opcode => fu_ALU_t1opcode_wire,
+      clk => clk,
+      rstx => rstx,
+      glock => fu_ALU_glock_wire);
+
   fu_MUL : fu_mul_always_2
     generic map (
       dataw => 32,
@@ -1144,23 +1144,6 @@ begin
       clk => clk,
       rstx => rstx,
       glock => fu_MUL_glock_wire);
-
-  fu_OUTPUT : fifo_stream_out_1
-    generic map (
-      dataw => 8,
-      busw => 8,
-      statusw => fu_OUTPUT_statusw)
-    port map (
-      t1data => fu_OUTPUT_t1data_wire,
-      t1load => fu_OUTPUT_t1load_wire,
-      r1data => fu_OUTPUT_r1data_wire,
-      t1opcode => fu_OUTPUT_t1opcode_wire,
-      ext_data => fu_OUTPUT_ext_data,
-      ext_status => fu_OUTPUT_ext_status,
-      ext_dv => fu_OUTPUT_ext_dv,
-      clk => clk,
-      rstx => rstx,
-      glock => fu_OUTPUT_glock_wire);
 
   fu_INPUT : fifo_stream_in_1
     generic map (
@@ -1180,20 +1163,22 @@ begin
       rstx => rstx,
       glock => fu_INPUT_glock_wire);
 
-  fu_ADDSH_1 : fu_add_shl_shr_shru_sub_always_1
+  fu_OUTPUT : fifo_stream_out_1
     generic map (
-      dataw => 32,
-      busw => 32)
+      dataw => 8,
+      busw => 8,
+      statusw => fu_OUTPUT_statusw)
     port map (
-      t1data => fu_ADDSH_1_t1data_wire,
-      t1load => fu_ADDSH_1_t1load_wire,
-      o1data => fu_ADDSH_1_o1data_wire,
-      o1load => fu_ADDSH_1_o1load_wire,
-      r1data => fu_ADDSH_1_r1data_wire,
-      t1opcode => fu_ADDSH_1_t1opcode_wire,
+      t1data => fu_OUTPUT_t1data_wire,
+      t1load => fu_OUTPUT_t1load_wire,
+      r1data => fu_OUTPUT_r1data_wire,
+      t1opcode => fu_OUTPUT_t1opcode_wire,
+      ext_data => fu_OUTPUT_ext_data,
+      ext_status => fu_OUTPUT_ext_status,
+      ext_dv => fu_OUTPUT_ext_dv,
       clk => clk,
       rstx => rstx,
-      glock => fu_ADDSH_1_glock_wire);
+      glock => fu_OUTPUT_glock_wire);
 
   fu_MUL_1 : fu_mul_always_2
     generic map (
@@ -1208,6 +1193,21 @@ begin
       clk => clk,
       rstx => rstx,
       glock => fu_MUL_1_glock_wire);
+
+  fu_ADDSH_1 : fu_add_shl_shr_shru_sub_always_1
+    generic map (
+      dataw => 32,
+      busw => 32)
+    port map (
+      t1data => fu_ADDSH_1_t1data_wire,
+      t1load => fu_ADDSH_1_t1load_wire,
+      o1data => fu_ADDSH_1_o1data_wire,
+      o1load => fu_ADDSH_1_o1load_wire,
+      r1data => fu_ADDSH_1_r1data_wire,
+      t1opcode => fu_ADDSH_1_t1opcode_wire,
+      clk => clk,
+      rstx => rstx,
+      glock => fu_ADDSH_1_glock_wire);
 
   rf_RF_0 : rf_1wr_1rd_always_1_guarded_1
     generic map (
@@ -1391,18 +1391,18 @@ begin
       socket_RF_5_o1_bus_cntrl => ic_socket_RF_5_o1_bus_cntrl_wire,
       socket_RF_5_i1_data => ic_socket_RF_5_i1_data_wire,
       socket_RF_5_i1_bus_cntrl => ic_socket_RF_5_i1_bus_cntrl_wire,
-      socket_ADDSH_1_i1_data => ic_socket_ADDSH_1_i1_data_wire,
-      socket_ADDSH_1_i1_bus_cntrl => ic_socket_ADDSH_1_i1_bus_cntrl_wire,
-      socket_ADDSH_1_i2_data => ic_socket_ADDSH_1_i2_data_wire,
-      socket_ADDSH_1_i2_bus_cntrl => ic_socket_ADDSH_1_i2_bus_cntrl_wire,
-      socket_ADDSH_1_o1_data0 => ic_socket_ADDSH_1_o1_data0_wire,
-      socket_ADDSH_1_o1_bus_cntrl => ic_socket_ADDSH_1_o1_bus_cntrl_wire,
       socket_MUL_1_i1_data => ic_socket_MUL_1_i1_data_wire,
       socket_MUL_1_i1_bus_cntrl => ic_socket_MUL_1_i1_bus_cntrl_wire,
       socket_MUL_1_i2_data => ic_socket_MUL_1_i2_data_wire,
       socket_MUL_1_i2_bus_cntrl => ic_socket_MUL_1_i2_bus_cntrl_wire,
       socket_MUL_1_o1_data0 => ic_socket_MUL_1_o1_data0_wire,
       socket_MUL_1_o1_bus_cntrl => ic_socket_MUL_1_o1_bus_cntrl_wire,
+      socket_ADDSH_1_i3_data => ic_socket_ADDSH_1_i3_data_wire,
+      socket_ADDSH_1_i3_bus_cntrl => ic_socket_ADDSH_1_i3_bus_cntrl_wire,
+      socket_ADDSH_1_i4_data => ic_socket_ADDSH_1_i4_data_wire,
+      socket_ADDSH_1_i4_bus_cntrl => ic_socket_ADDSH_1_i4_bus_cntrl_wire,
+      socket_ADDSH_1_o2_data0 => ic_socket_ADDSH_1_o2_data0_wire,
+      socket_ADDSH_1_o2_bus_cntrl => ic_socket_ADDSH_1_o2_bus_cntrl_wire,
       simm_B1 => ic_simm_B1_wire,
       simm_cntrl_B1 => ic_simm_cntrl_B1_wire,
       simm_B1_1 => ic_simm_B1_1_wire,

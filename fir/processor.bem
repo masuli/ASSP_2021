@@ -223,7 +223,7 @@
     <rf-port-code index-width="3" rf="RF_5"/>
   </map-ports>
 
-  <map-ports name="ADDSH_1_i1">
+  <map-ports name="ADDSH_1_i3">
     <extra-bits>0</extra-bits>
     <fu-port-code fu="ADDSH_1" name="in1t" operation="add">
       <encoding>0</encoding>
@@ -266,59 +266,38 @@
       <immediate width="32">
         <map extra-bits="0">0</map>
       </immediate>
-      <socket name="RF_o1">
-        <map codes="RF_o1" extra-bits="0">32</map>
-      </socket>
-      <socket name="RF_0_1_o1">
-        <map codes="RF_0_1_o1" extra-bits="0">33</map>
-      </socket>
-      <socket name="RF_0_2_o1">
-        <map codes="RF_0_2_o1" extra-bits="0">34</map>
-      </socket>
-      <socket name="RF_2_1_o1">
-        <map codes="RF_2_1_o1" extra-bits="0">35</map>
-      </socket>
-      <socket name="RF_2_2_o1">
-        <map codes="RF_2_2_o1" extra-bits="0">36</map>
-      </socket>
-      <socket name="RF_5_o1">
-        <map codes="RF_5_o1" extra-bits="0">37</map>
-      </socket>
-      <socket name="bool_o1">
-        <map codes="bool_o1" extra-bits="0">38</map>
-      </socket>
       <socket name="lsu_o1">
-        <map extra-bits="0">40</map>
+        <map extra-bits="0">17</map>
       </socket>
       <socket name="gcu_o1">
-        <map extra-bits="0">41</map>
+        <map extra-bits="0">18</map>
       </socket>
       <socket name="ALU_o1">
-        <map extra-bits="0">42</map>
+        <map extra-bits="0">19</map>
       </socket>
       <socket name="ADDSH_o1">
-        <map extra-bits="0">43</map>
+        <map extra-bits="0">20</map>
       </socket>
       <socket name="MUL_o1">
-        <map extra-bits="0">44</map>
+        <map extra-bits="0">21</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_o2">
-        <map extra-bits="0">45</map>
+        <map extra-bits="0">22</map>
       </socket>
       <socket name="INPUT_o1">
-        <map extra-bits="0">46</map>
+        <map extra-bits="0">23</map>
       </socket>
       <socket name="INPUT_o2">
-        <map extra-bits="0">47</map>
-      </socket>
-      <socket name="ADDSH_1_o1">
-        <map extra-bits="0">48</map>
+        <map extra-bits="0">24</map>
       </socket>
       <socket name="MUL_1_o1">
-        <map extra-bits="0">49</map>
+        <map extra-bits="0">25</map>
+      </socket>
+      <socket name="ADDSH_1_o2">
+        <map extra-bits="0">26</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">39</map>
+        <map extra-bits="0">16</map>
       </no-operation>
     </source>
     <destination>
@@ -326,76 +305,55 @@
       <extra-bits>0</extra-bits>
       <id-pos>left</id-pos>
       <socket name="ALU_i1">
-        <map codes="ALU_i1" extra-bits="2">0</map>
+        <map codes="ALU_i1" extra-bits="1">0</map>
       </socket>
       <socket name="lsu_i1">
-        <map codes="lsu_i1" extra-bits="2">2</map>
-      </socket>
-      <socket name="RF_i1">
-        <map codes="RF_i1" extra-bits="2">3</map>
+        <map codes="lsu_i1" extra-bits="1">2</map>
       </socket>
       <socket name="ADDSH_i1">
-        <map codes="ADDSH_i1" extra-bits="1">4</map>
+        <map codes="ADDSH_i1" extra-bits="1">3</map>
       </socket>
-      <socket name="RF_0_1_i1">
-        <map codes="RF_0_1_i1" extra-bits="1">5</map>
-      </socket>
-      <socket name="RF_0_2_i1">
-        <map codes="RF_0_2_i1" extra-bits="1">6</map>
-      </socket>
-      <socket name="RF_2_1_i1">
-        <map codes="RF_2_1_i1" extra-bits="1">7</map>
-      </socket>
-      <socket name="RF_2_2_i1">
-        <map codes="RF_2_2_i1" extra-bits="0">8</map>
-      </socket>
-      <socket name="RF_5_i1">
-        <map codes="RF_5_i1" extra-bits="0">9</map>
-      </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
-      </socket>
-      <socket name="bool_i1">
-        <map codes="bool_i1" extra-bits="0">44</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">4</map>
       </socket>
       <socket name="gcu_i1">
-        <map codes="gcu_i1" extra-bits="0">45</map>
+        <map codes="gcu_i1" extra-bits="0">20</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_i2">
-        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">46</map>
+        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">21</map>
       </socket>
       <socket name="INPUT_i1">
-        <map codes="INPUT_i1" extra-bits="0">47</map>
+        <map codes="INPUT_i1" extra-bits="0">22</map>
       </socket>
       <socket name="lsu_i2">
-        <map extra-bits="0">97</map>
+        <map extra-bits="0">47</map>
       </socket>
       <socket name="gcu_i2">
-        <map extra-bits="0">98</map>
+        <map extra-bits="0">48</map>
       </socket>
       <socket name="ALU_i2">
-        <map extra-bits="0">99</map>
+        <map extra-bits="0">49</map>
       </socket>
       <socket name="ADDSH_i2">
-        <map extra-bits="0">100</map>
+        <map extra-bits="0">50</map>
       </socket>
       <socket name="MUL_i1">
-        <map extra-bits="0">101</map>
+        <map extra-bits="0">51</map>
       </socket>
       <socket name="MUL_i2">
-        <map extra-bits="0">102</map>
-      </socket>
-      <socket name="ADDSH_1_i2">
-        <map extra-bits="0">103</map>
+        <map extra-bits="0">52</map>
       </socket>
       <socket name="MUL_1_i1">
-        <map extra-bits="0">104</map>
+        <map extra-bits="0">53</map>
       </socket>
       <socket name="MUL_1_i2">
-        <map extra-bits="0">105</map>
+        <map extra-bits="0">54</map>
+      </socket>
+      <socket name="ADDSH_1_i4">
+        <map extra-bits="0">55</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">96</map>
+        <map extra-bits="0">46</map>
       </no-operation>
     </destination>
   </slot>
@@ -419,59 +377,38 @@
       <immediate width="32">
         <map extra-bits="0">0</map>
       </immediate>
-      <socket name="RF_o1">
-        <map codes="RF_o1" extra-bits="0">32</map>
-      </socket>
-      <socket name="RF_0_1_o1">
-        <map codes="RF_0_1_o1" extra-bits="0">33</map>
-      </socket>
-      <socket name="RF_0_2_o1">
-        <map codes="RF_0_2_o1" extra-bits="0">34</map>
-      </socket>
-      <socket name="RF_2_1_o1">
-        <map codes="RF_2_1_o1" extra-bits="0">35</map>
-      </socket>
-      <socket name="RF_2_2_o1">
-        <map codes="RF_2_2_o1" extra-bits="0">36</map>
-      </socket>
-      <socket name="RF_5_o1">
-        <map codes="RF_5_o1" extra-bits="0">37</map>
-      </socket>
-      <socket name="bool_o1">
-        <map codes="bool_o1" extra-bits="0">38</map>
-      </socket>
       <socket name="lsu_o1">
-        <map extra-bits="0">40</map>
+        <map extra-bits="0">17</map>
       </socket>
       <socket name="gcu_o1">
-        <map extra-bits="0">41</map>
+        <map extra-bits="0">18</map>
       </socket>
       <socket name="ALU_o1">
-        <map extra-bits="0">42</map>
+        <map extra-bits="0">19</map>
       </socket>
       <socket name="ADDSH_o1">
-        <map extra-bits="0">43</map>
+        <map extra-bits="0">20</map>
       </socket>
       <socket name="MUL_o1">
-        <map extra-bits="0">44</map>
+        <map extra-bits="0">21</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_o2">
-        <map extra-bits="0">45</map>
+        <map extra-bits="0">22</map>
       </socket>
       <socket name="INPUT_o1">
-        <map extra-bits="0">46</map>
+        <map extra-bits="0">23</map>
       </socket>
       <socket name="INPUT_o2">
-        <map extra-bits="0">47</map>
-      </socket>
-      <socket name="ADDSH_1_o1">
-        <map extra-bits="0">48</map>
+        <map extra-bits="0">24</map>
       </socket>
       <socket name="MUL_1_o1">
-        <map extra-bits="0">49</map>
+        <map extra-bits="0">25</map>
+      </socket>
+      <socket name="ADDSH_1_o2">
+        <map extra-bits="0">26</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">39</map>
+        <map extra-bits="0">16</map>
       </no-operation>
     </source>
     <destination>
@@ -479,76 +416,55 @@
       <extra-bits>0</extra-bits>
       <id-pos>left</id-pos>
       <socket name="ALU_i1">
-        <map codes="ALU_i1" extra-bits="2">0</map>
+        <map codes="ALU_i1" extra-bits="1">0</map>
       </socket>
       <socket name="lsu_i1">
-        <map codes="lsu_i1" extra-bits="2">2</map>
-      </socket>
-      <socket name="RF_i1">
-        <map codes="RF_i1" extra-bits="2">3</map>
+        <map codes="lsu_i1" extra-bits="1">2</map>
       </socket>
       <socket name="ADDSH_i1">
-        <map codes="ADDSH_i1" extra-bits="1">4</map>
+        <map codes="ADDSH_i1" extra-bits="1">3</map>
       </socket>
-      <socket name="RF_0_1_i1">
-        <map codes="RF_0_1_i1" extra-bits="1">5</map>
-      </socket>
-      <socket name="RF_0_2_i1">
-        <map codes="RF_0_2_i1" extra-bits="1">6</map>
-      </socket>
-      <socket name="RF_2_1_i1">
-        <map codes="RF_2_1_i1" extra-bits="1">7</map>
-      </socket>
-      <socket name="RF_2_2_i1">
-        <map codes="RF_2_2_i1" extra-bits="0">8</map>
-      </socket>
-      <socket name="RF_5_i1">
-        <map codes="RF_5_i1" extra-bits="0">9</map>
-      </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
-      </socket>
-      <socket name="bool_i1">
-        <map codes="bool_i1" extra-bits="0">44</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">4</map>
       </socket>
       <socket name="gcu_i1">
-        <map codes="gcu_i1" extra-bits="0">45</map>
+        <map codes="gcu_i1" extra-bits="0">20</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_i2">
-        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">46</map>
+        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">21</map>
       </socket>
       <socket name="INPUT_i1">
-        <map codes="INPUT_i1" extra-bits="0">47</map>
+        <map codes="INPUT_i1" extra-bits="0">22</map>
       </socket>
       <socket name="lsu_i2">
-        <map extra-bits="0">97</map>
+        <map extra-bits="0">47</map>
       </socket>
       <socket name="gcu_i2">
-        <map extra-bits="0">98</map>
+        <map extra-bits="0">48</map>
       </socket>
       <socket name="ALU_i2">
-        <map extra-bits="0">99</map>
+        <map extra-bits="0">49</map>
       </socket>
       <socket name="ADDSH_i2">
-        <map extra-bits="0">100</map>
+        <map extra-bits="0">50</map>
       </socket>
       <socket name="MUL_i1">
-        <map extra-bits="0">101</map>
+        <map extra-bits="0">51</map>
       </socket>
       <socket name="MUL_i2">
-        <map extra-bits="0">102</map>
-      </socket>
-      <socket name="ADDSH_1_i2">
-        <map extra-bits="0">103</map>
+        <map extra-bits="0">52</map>
       </socket>
       <socket name="MUL_1_i1">
-        <map extra-bits="0">104</map>
+        <map extra-bits="0">53</map>
       </socket>
       <socket name="MUL_1_i2">
-        <map extra-bits="0">105</map>
+        <map extra-bits="0">54</map>
+      </socket>
+      <socket name="ADDSH_1_i4">
+        <map extra-bits="0">55</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">96</map>
+        <map extra-bits="0">46</map>
       </no-operation>
     </destination>
   </slot>
@@ -617,10 +533,10 @@
       <socket name="INPUT_o2">
         <map extra-bits="0">47</map>
       </socket>
-      <socket name="ADDSH_1_o1">
+      <socket name="MUL_1_o1">
         <map extra-bits="0">48</map>
       </socket>
-      <socket name="MUL_1_o1">
+      <socket name="ADDSH_1_o2">
         <map extra-bits="0">49</map>
       </socket>
       <no-operation>
@@ -658,8 +574,8 @@
       <socket name="RF_5_i1">
         <map codes="RF_5_i1" extra-bits="0">9</map>
       </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">10</map>
       </socket>
       <socket name="bool_i1">
         <map codes="bool_i1" extra-bits="0">44</map>
@@ -691,13 +607,13 @@
       <socket name="MUL_i2">
         <map extra-bits="0">102</map>
       </socket>
-      <socket name="ADDSH_1_i2">
+      <socket name="MUL_1_i1">
         <map extra-bits="0">103</map>
       </socket>
-      <socket name="MUL_1_i1">
+      <socket name="MUL_1_i2">
         <map extra-bits="0">104</map>
       </socket>
-      <socket name="MUL_1_i2">
+      <socket name="ADDSH_1_i4">
         <map extra-bits="0">105</map>
       </socket>
       <no-operation>
@@ -770,10 +686,10 @@
       <socket name="INPUT_o2">
         <map extra-bits="0">47</map>
       </socket>
-      <socket name="ADDSH_1_o1">
+      <socket name="MUL_1_o1">
         <map extra-bits="0">48</map>
       </socket>
-      <socket name="MUL_1_o1">
+      <socket name="ADDSH_1_o2">
         <map extra-bits="0">49</map>
       </socket>
       <no-operation>
@@ -811,8 +727,8 @@
       <socket name="RF_5_i1">
         <map codes="RF_5_i1" extra-bits="0">9</map>
       </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">10</map>
       </socket>
       <socket name="bool_i1">
         <map codes="bool_i1" extra-bits="0">44</map>
@@ -844,13 +760,13 @@
       <socket name="MUL_i2">
         <map extra-bits="0">102</map>
       </socket>
-      <socket name="ADDSH_1_i2">
+      <socket name="MUL_1_i1">
         <map extra-bits="0">103</map>
       </socket>
-      <socket name="MUL_1_i1">
+      <socket name="MUL_1_i2">
         <map extra-bits="0">104</map>
       </socket>
-      <socket name="MUL_1_i2">
+      <socket name="ADDSH_1_i4">
         <map extra-bits="0">105</map>
       </socket>
       <no-operation>
@@ -869,59 +785,38 @@
       <immediate width="32">
         <map extra-bits="0">0</map>
       </immediate>
-      <socket name="RF_o1">
-        <map codes="RF_o1" extra-bits="0">32</map>
-      </socket>
-      <socket name="RF_0_1_o1">
-        <map codes="RF_0_1_o1" extra-bits="0">33</map>
-      </socket>
-      <socket name="RF_0_2_o1">
-        <map codes="RF_0_2_o1" extra-bits="0">34</map>
-      </socket>
-      <socket name="RF_2_1_o1">
-        <map codes="RF_2_1_o1" extra-bits="0">35</map>
-      </socket>
-      <socket name="RF_2_2_o1">
-        <map codes="RF_2_2_o1" extra-bits="0">36</map>
-      </socket>
-      <socket name="RF_5_o1">
-        <map codes="RF_5_o1" extra-bits="0">37</map>
-      </socket>
-      <socket name="bool_o1">
-        <map codes="bool_o1" extra-bits="0">38</map>
-      </socket>
       <socket name="lsu_o1">
-        <map extra-bits="0">40</map>
+        <map extra-bits="0">17</map>
       </socket>
       <socket name="gcu_o1">
-        <map extra-bits="0">41</map>
+        <map extra-bits="0">18</map>
       </socket>
       <socket name="ALU_o1">
-        <map extra-bits="0">42</map>
+        <map extra-bits="0">19</map>
       </socket>
       <socket name="ADDSH_o1">
-        <map extra-bits="0">43</map>
+        <map extra-bits="0">20</map>
       </socket>
       <socket name="MUL_o1">
-        <map extra-bits="0">44</map>
+        <map extra-bits="0">21</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_o2">
-        <map extra-bits="0">45</map>
+        <map extra-bits="0">22</map>
       </socket>
       <socket name="INPUT_o1">
-        <map extra-bits="0">46</map>
+        <map extra-bits="0">23</map>
       </socket>
       <socket name="INPUT_o2">
-        <map extra-bits="0">47</map>
-      </socket>
-      <socket name="ADDSH_1_o1">
-        <map extra-bits="0">48</map>
+        <map extra-bits="0">24</map>
       </socket>
       <socket name="MUL_1_o1">
-        <map extra-bits="0">49</map>
+        <map extra-bits="0">25</map>
+      </socket>
+      <socket name="ADDSH_1_o2">
+        <map extra-bits="0">26</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">39</map>
+        <map extra-bits="0">16</map>
       </no-operation>
     </source>
     <destination>
@@ -929,76 +824,55 @@
       <extra-bits>0</extra-bits>
       <id-pos>left</id-pos>
       <socket name="ALU_i1">
-        <map codes="ALU_i1" extra-bits="2">0</map>
+        <map codes="ALU_i1" extra-bits="1">0</map>
       </socket>
       <socket name="lsu_i1">
-        <map codes="lsu_i1" extra-bits="2">2</map>
-      </socket>
-      <socket name="RF_i1">
-        <map codes="RF_i1" extra-bits="2">3</map>
+        <map codes="lsu_i1" extra-bits="1">2</map>
       </socket>
       <socket name="ADDSH_i1">
-        <map codes="ADDSH_i1" extra-bits="1">4</map>
+        <map codes="ADDSH_i1" extra-bits="1">3</map>
       </socket>
-      <socket name="RF_0_1_i1">
-        <map codes="RF_0_1_i1" extra-bits="1">5</map>
-      </socket>
-      <socket name="RF_0_2_i1">
-        <map codes="RF_0_2_i1" extra-bits="1">6</map>
-      </socket>
-      <socket name="RF_2_1_i1">
-        <map codes="RF_2_1_i1" extra-bits="1">7</map>
-      </socket>
-      <socket name="RF_2_2_i1">
-        <map codes="RF_2_2_i1" extra-bits="0">8</map>
-      </socket>
-      <socket name="RF_5_i1">
-        <map codes="RF_5_i1" extra-bits="0">9</map>
-      </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
-      </socket>
-      <socket name="bool_i1">
-        <map codes="bool_i1" extra-bits="0">44</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">4</map>
       </socket>
       <socket name="gcu_i1">
-        <map codes="gcu_i1" extra-bits="0">45</map>
+        <map codes="gcu_i1" extra-bits="0">20</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_i2">
-        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">46</map>
+        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">21</map>
       </socket>
       <socket name="INPUT_i1">
-        <map codes="INPUT_i1" extra-bits="0">47</map>
+        <map codes="INPUT_i1" extra-bits="0">22</map>
       </socket>
       <socket name="lsu_i2">
-        <map extra-bits="0">97</map>
+        <map extra-bits="0">47</map>
       </socket>
       <socket name="gcu_i2">
-        <map extra-bits="0">98</map>
+        <map extra-bits="0">48</map>
       </socket>
       <socket name="ALU_i2">
-        <map extra-bits="0">99</map>
+        <map extra-bits="0">49</map>
       </socket>
       <socket name="ADDSH_i2">
-        <map extra-bits="0">100</map>
+        <map extra-bits="0">50</map>
       </socket>
       <socket name="MUL_i1">
-        <map extra-bits="0">101</map>
+        <map extra-bits="0">51</map>
       </socket>
       <socket name="MUL_i2">
-        <map extra-bits="0">102</map>
-      </socket>
-      <socket name="ADDSH_1_i2">
-        <map extra-bits="0">103</map>
+        <map extra-bits="0">52</map>
       </socket>
       <socket name="MUL_1_i1">
-        <map extra-bits="0">104</map>
+        <map extra-bits="0">53</map>
       </socket>
       <socket name="MUL_1_i2">
-        <map extra-bits="0">105</map>
+        <map extra-bits="0">54</map>
+      </socket>
+      <socket name="ADDSH_1_i4">
+        <map extra-bits="0">55</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">96</map>
+        <map extra-bits="0">46</map>
       </no-operation>
     </destination>
   </slot>
@@ -1013,59 +887,38 @@
       <immediate width="32">
         <map extra-bits="0">0</map>
       </immediate>
-      <socket name="RF_o1">
-        <map codes="RF_o1" extra-bits="0">32</map>
-      </socket>
-      <socket name="RF_0_1_o1">
-        <map codes="RF_0_1_o1" extra-bits="0">33</map>
-      </socket>
-      <socket name="RF_0_2_o1">
-        <map codes="RF_0_2_o1" extra-bits="0">34</map>
-      </socket>
-      <socket name="RF_2_1_o1">
-        <map codes="RF_2_1_o1" extra-bits="0">35</map>
-      </socket>
-      <socket name="RF_2_2_o1">
-        <map codes="RF_2_2_o1" extra-bits="0">36</map>
-      </socket>
-      <socket name="RF_5_o1">
-        <map codes="RF_5_o1" extra-bits="0">37</map>
-      </socket>
-      <socket name="bool_o1">
-        <map codes="bool_o1" extra-bits="0">38</map>
-      </socket>
       <socket name="lsu_o1">
-        <map extra-bits="0">40</map>
+        <map extra-bits="0">17</map>
       </socket>
       <socket name="gcu_o1">
-        <map extra-bits="0">41</map>
+        <map extra-bits="0">18</map>
       </socket>
       <socket name="ALU_o1">
-        <map extra-bits="0">42</map>
+        <map extra-bits="0">19</map>
       </socket>
       <socket name="ADDSH_o1">
-        <map extra-bits="0">43</map>
+        <map extra-bits="0">20</map>
       </socket>
       <socket name="MUL_o1">
-        <map extra-bits="0">44</map>
+        <map extra-bits="0">21</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_o2">
-        <map extra-bits="0">45</map>
+        <map extra-bits="0">22</map>
       </socket>
       <socket name="INPUT_o1">
-        <map extra-bits="0">46</map>
+        <map extra-bits="0">23</map>
       </socket>
       <socket name="INPUT_o2">
-        <map extra-bits="0">47</map>
-      </socket>
-      <socket name="ADDSH_1_o1">
-        <map extra-bits="0">48</map>
+        <map extra-bits="0">24</map>
       </socket>
       <socket name="MUL_1_o1">
-        <map extra-bits="0">49</map>
+        <map extra-bits="0">25</map>
+      </socket>
+      <socket name="ADDSH_1_o2">
+        <map extra-bits="0">26</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">39</map>
+        <map extra-bits="0">16</map>
       </no-operation>
     </source>
     <destination>
@@ -1073,76 +926,55 @@
       <extra-bits>0</extra-bits>
       <id-pos>left</id-pos>
       <socket name="ALU_i1">
-        <map codes="ALU_i1" extra-bits="2">0</map>
+        <map codes="ALU_i1" extra-bits="1">0</map>
       </socket>
       <socket name="lsu_i1">
-        <map codes="lsu_i1" extra-bits="2">2</map>
-      </socket>
-      <socket name="RF_i1">
-        <map codes="RF_i1" extra-bits="2">3</map>
+        <map codes="lsu_i1" extra-bits="1">2</map>
       </socket>
       <socket name="ADDSH_i1">
-        <map codes="ADDSH_i1" extra-bits="1">4</map>
+        <map codes="ADDSH_i1" extra-bits="1">3</map>
       </socket>
-      <socket name="RF_0_1_i1">
-        <map codes="RF_0_1_i1" extra-bits="1">5</map>
-      </socket>
-      <socket name="RF_0_2_i1">
-        <map codes="RF_0_2_i1" extra-bits="1">6</map>
-      </socket>
-      <socket name="RF_2_1_i1">
-        <map codes="RF_2_1_i1" extra-bits="1">7</map>
-      </socket>
-      <socket name="RF_2_2_i1">
-        <map codes="RF_2_2_i1" extra-bits="0">8</map>
-      </socket>
-      <socket name="RF_5_i1">
-        <map codes="RF_5_i1" extra-bits="0">9</map>
-      </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
-      </socket>
-      <socket name="bool_i1">
-        <map codes="bool_i1" extra-bits="0">44</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">4</map>
       </socket>
       <socket name="gcu_i1">
-        <map codes="gcu_i1" extra-bits="0">45</map>
+        <map codes="gcu_i1" extra-bits="0">20</map>
       </socket>
       <socket name="fifo_u8_stream_out_fifo_u8_stream_out_status_i2">
-        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">46</map>
+        <map codes="fifo_u8_stream_out_fifo_u8_stream_out_status_i2" extra-bits="0">21</map>
       </socket>
       <socket name="INPUT_i1">
-        <map codes="INPUT_i1" extra-bits="0">47</map>
+        <map codes="INPUT_i1" extra-bits="0">22</map>
       </socket>
       <socket name="lsu_i2">
-        <map extra-bits="0">97</map>
+        <map extra-bits="0">47</map>
       </socket>
       <socket name="gcu_i2">
-        <map extra-bits="0">98</map>
+        <map extra-bits="0">48</map>
       </socket>
       <socket name="ALU_i2">
-        <map extra-bits="0">99</map>
+        <map extra-bits="0">49</map>
       </socket>
       <socket name="ADDSH_i2">
-        <map extra-bits="0">100</map>
+        <map extra-bits="0">50</map>
       </socket>
       <socket name="MUL_i1">
-        <map extra-bits="0">101</map>
+        <map extra-bits="0">51</map>
       </socket>
       <socket name="MUL_i2">
-        <map extra-bits="0">102</map>
-      </socket>
-      <socket name="ADDSH_1_i2">
-        <map extra-bits="0">103</map>
+        <map extra-bits="0">52</map>
       </socket>
       <socket name="MUL_1_i1">
-        <map extra-bits="0">104</map>
+        <map extra-bits="0">53</map>
       </socket>
       <socket name="MUL_1_i2">
-        <map extra-bits="0">105</map>
+        <map extra-bits="0">54</map>
+      </socket>
+      <socket name="ADDSH_1_i4">
+        <map extra-bits="0">55</map>
       </socket>
       <no-operation>
-        <map extra-bits="0">96</map>
+        <map extra-bits="0">46</map>
       </no-operation>
     </destination>
   </slot>
@@ -1202,10 +1034,10 @@
       <socket name="INPUT_o2">
         <map extra-bits="0">47</map>
       </socket>
-      <socket name="ADDSH_1_o1">
+      <socket name="MUL_1_o1">
         <map extra-bits="0">48</map>
       </socket>
-      <socket name="MUL_1_o1">
+      <socket name="ADDSH_1_o2">
         <map extra-bits="0">49</map>
       </socket>
       <no-operation>
@@ -1243,8 +1075,8 @@
       <socket name="RF_5_i1">
         <map codes="RF_5_i1" extra-bits="0">9</map>
       </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">10</map>
       </socket>
       <socket name="bool_i1">
         <map codes="bool_i1" extra-bits="0">44</map>
@@ -1276,13 +1108,13 @@
       <socket name="MUL_i2">
         <map extra-bits="0">102</map>
       </socket>
-      <socket name="ADDSH_1_i2">
+      <socket name="MUL_1_i1">
         <map extra-bits="0">103</map>
       </socket>
-      <socket name="MUL_1_i1">
+      <socket name="MUL_1_i2">
         <map extra-bits="0">104</map>
       </socket>
-      <socket name="MUL_1_i2">
+      <socket name="ADDSH_1_i4">
         <map extra-bits="0">105</map>
       </socket>
       <no-operation>
@@ -1346,10 +1178,10 @@
       <socket name="INPUT_o2">
         <map extra-bits="0">47</map>
       </socket>
-      <socket name="ADDSH_1_o1">
+      <socket name="MUL_1_o1">
         <map extra-bits="0">48</map>
       </socket>
-      <socket name="MUL_1_o1">
+      <socket name="ADDSH_1_o2">
         <map extra-bits="0">49</map>
       </socket>
       <no-operation>
@@ -1387,8 +1219,8 @@
       <socket name="RF_5_i1">
         <map codes="RF_5_i1" extra-bits="0">9</map>
       </socket>
-      <socket name="ADDSH_1_i1">
-        <map codes="ADDSH_1_i1" extra-bits="0">10</map>
+      <socket name="ADDSH_1_i3">
+        <map codes="ADDSH_1_i3" extra-bits="0">10</map>
       </socket>
       <socket name="bool_i1">
         <map codes="bool_i1" extra-bits="0">44</map>
@@ -1420,13 +1252,13 @@
       <socket name="MUL_i2">
         <map extra-bits="0">102</map>
       </socket>
-      <socket name="ADDSH_1_i2">
+      <socket name="MUL_1_i1">
         <map extra-bits="0">103</map>
       </socket>
-      <socket name="MUL_1_i1">
+      <socket name="MUL_1_i2">
         <map extra-bits="0">104</map>
       </socket>
-      <socket name="MUL_1_i2">
+      <socket name="ADDSH_1_i4">
         <map extra-bits="0">105</map>
       </socket>
       <no-operation>

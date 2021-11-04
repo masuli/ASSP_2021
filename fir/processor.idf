@@ -12,14 +12,14 @@
     <fu-id>2</fu-id>
   </fu>
 
-  <fu name="ALU">
-    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
-    <fu-id>375</fu-id>
-  </fu>
-
   <fu name="ADDSH">
     <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
     <fu-id>275</fu-id>
+  </fu>
+
+  <fu name="ALU">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>375</fu-id>
   </fu>
 
   <fu name="MUL">
@@ -27,24 +27,24 @@
     <fu-id>88</fu-id>
   </fu>
 
-  <fu name="OUTPUT">
-    <hdb-file>/usr/local/share/tce/hdb/fifo_stream.hdb</hdb-file>
-    <fu-id>12</fu-id>
-  </fu>
-
   <fu name="INPUT">
     <hdb-file>/usr/local/share/tce/hdb/fifo_stream.hdb</hdb-file>
     <fu-id>17</fu-id>
   </fu>
 
-  <fu name="ADDSH_1">
-    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
-    <fu-id>275</fu-id>
+  <fu name="OUTPUT">
+    <hdb-file>/usr/local/share/tce/hdb/fifo_stream.hdb</hdb-file>
+    <fu-id>12</fu-id>
   </fu>
 
   <fu name="MUL_1">
     <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
     <fu-id>88</fu-id>
+  </fu>
+
+  <fu name="ADDSH_1">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>275</fu-id>
   </fu>
 
   <rf name="RF_0">
