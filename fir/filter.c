@@ -48,15 +48,10 @@ void fir_filter() {
 		d2 = input_sample_3;
 		d3 = input_sample_4;
 	}
-	_TCE_FIFO_U8_STREAM_IN(0, input_sample_1, status);
-	_TCE_FIFO_U8_STREAM_IN(0, input_sample_2, status);
-	_TCE_FIFO_U8_STREAM_IN(0, input_sample_3, status);
-	_TCE_FIFO_U8_STREAM_IN(0, input_sample_4, status);
-	
-	input_sample_1 -= x;
-	input_sample_2 -= x;
-	input_sample_3 -= x;
-	input_sample_4 -= x;
+	input_sample_1 = -x;
+	input_sample_2 = -x;
+	input_sample_3 = -x;
+	input_sample_4 = -x;
 
 	filtered_sample_1 = d1 * k0 + d2 * k1 + d3 * k2 + input_sample_1 * k3;
 	_TCE_FIFO_U8_STREAM_OUT((filtered_sample_1 >> SCALE) + x);
