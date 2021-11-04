@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Nov  4 00:19:20 2021
+Fitter Status : Successful - Thu Nov  4 02:21:57 2021
 Quartus II 32-bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : tta
 Top-level Entity Name : tta
 Family : Cyclone III
 Device : EP3C25F324C6
 Timing Models : Final
-Total logic elements : 6,285 / 24,624 ( 26 % )
-    Total combinational functions : 5,273 / 24,624 ( 21 % )
-    Dedicated logic registers : 3,152 / 24,624 ( 13 % )
-Total registers : 3152
+Total logic elements : 10,765 / 24,624 ( 44 % )
+    Total combinational functions : 9,655 / 24,624 ( 39 % )
+    Dedicated logic registers : 3,565 / 24,624 ( 14 % )
+Total registers : 3565
 Total pins : 6 / 216 ( 3 % )
 Total virtual pins : 0
-Total memory bits : 198,144 / 608,256 ( 33 % )
-Embedded Multiplier 9-bit elements : 6 / 132 ( 5 % )
+Total memory bits : 239,104 / 608,256 ( 39 % )
+Embedded Multiplier 9-bit elements : 12 / 132 ( 9 % )
 Total PLLs : 0 / 4 ( 0 % )

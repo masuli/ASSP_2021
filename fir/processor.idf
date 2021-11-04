@@ -37,6 +37,16 @@
     <fu-id>17</fu-id>
   </fu>
 
+  <fu name="ADDSH_1">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>275</fu-id>
+  </fu>
+
+  <fu name="MUL_1">
+    <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
+    <fu-id>88</fu-id>
+  </fu>
+
   <rf name="RF_0">
     <hdb-file>/usr/local/share/tce/hdb/asic_130nm_1.5V.hdb</hdb-file>
     <rf-id>958</rf-id>

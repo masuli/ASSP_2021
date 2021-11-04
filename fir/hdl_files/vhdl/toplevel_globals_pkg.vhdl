@@ -1,6 +1,6 @@
 package toplevel_globals is
   -- instruction width
-  constant INSTRUCTIONWIDTH : positive := 172;
+  constant INSTRUCTIONWIDTH : positive := 332;
   -- address width of the instruction memory
   constant IMEMADDRWIDTH : positive := 8;
   -- width of the instruction memory in MAUs

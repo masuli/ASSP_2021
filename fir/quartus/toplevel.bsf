@@ -47,8 +47,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "imem_data[171..0]" (rect 0 0 71 12)(font "Arial" ))
-		(text "imem_data[171..0]" (rect 21 75 92 87)(font "Arial" ))
+		(text "imem_data[331..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "imem_data[331..0]" (rect 21 75 94 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port

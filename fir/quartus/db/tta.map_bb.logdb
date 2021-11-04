@@ -1,4 +1,7 @@
 v1
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL_1|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out4,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out6,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL_1|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,toplevel:inst|fu_mul_always_2:fu_MUL_1|mul_arith:fu_arch|lpm_mult:Mult0|mult_r4t:auto_generated|mac_out6,
