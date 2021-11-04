@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tta
-Thu Nov  4 00:18:30 2021
+Thu Nov  4 19:08:56 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -16,94 +16,93 @@ Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   8. Analysis & Synthesis DSP Block Usage Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for stream_source_1:inst7|tiny_fifo:inst1|scfifo:scfifo_component|scfifo_6i61:auto_generated|a_dpfifo_i431:dpfifo|altsyncram_ad81:FIFOram
- 16. Source assignments for stream_source_1:inst7|data_src1:inst|altsyncram:altsyncram_component|altsyncram_sta1:auto_generated
- 17. Source assignments for dataram:inst1|altsyncram:altsyncram_component|altsyncram_t7t3:auto_generated
- 18. Source assignments for instrom:inst2|altsyncram:altsyncram_component|altsyncram_otr3:auto_generated
- 19. Parameter Settings for User Entity Instance: toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU
- 20. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU
- 21. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch
- 22. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH
- 23. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch
- 24. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1
- 25. Parameter Settings for User Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL
- 26. Parameter Settings for User Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch
- 27. Parameter Settings for User Entity Instance: toplevel:inst|fifo_stream_out_1:fu_OUTPUT
- 28. Parameter Settings for User Entity Instance: toplevel:inst|fifo_stream_in_1:fu_INPUT
- 29. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0
- 30. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_0:rf_BOOL
- 31. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1
- 32. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2
- 33. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3
- 34. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4
- 35. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5
- 36. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i1
- 37. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:lsu_o1
- 38. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i2
- 39. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_i1
- 40. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_o1
- 41. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:bool_i1
- 42. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:bool_o1
- 43. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:gcu_i1
- 44. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:gcu_i2
- 45. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:gcu_o1
- 46. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i1
- 47. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i2
- 48. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:ALU_o1
- 49. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i1
- 50. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i2
- 51. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:ADDSH_o1
- 52. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:MUL_i1
- 53. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:MUL_i2
- 54. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:MUL_o1
- 55. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_0_1_o1
- 56. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_1_i1
- 57. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_0_2_o1
- 58. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_2_i1
- 59. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_2_1_o1
- 60. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_1_i1
- 61. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_2_2_o1
- 62. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_2_i1
- 63. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:fifo_u8_stream_out_fifo_u8_stream_out_status_i2
- 64. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:fifo_u8_stream_out_fifo_u8_stream_out_status_o2
- 65. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:INPUT_i1
- 66. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:INPUT_o1
- 67. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:INPUT_o2
- 68. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_5_o1
- 69. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_5_i1
- 70. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1
- 71. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_1
- 72. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_2
- 73. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_3
- 74. Parameter Settings for User Entity Instance: stream_source_1:inst7|tiny_fifo:inst1|scfifo:scfifo_component
- 75. Parameter Settings for User Entity Instance: stream_source_1:inst7|data_src1:inst|altsyncram:altsyncram_component
- 76. Parameter Settings for User Entity Instance: stream_source_1:inst7|addr_gen:inst5
- 77. Parameter Settings for User Entity Instance: dataram:inst1|altsyncram:altsyncram_component
- 78. Parameter Settings for User Entity Instance: checksum:inst4
- 79. Parameter Settings for User Entity Instance: instrom:inst2|altsyncram:altsyncram_component
- 80. Parameter Settings for User Entity Instance: pc_init:inst5
- 81. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 82. Parameter Settings for Inferred Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0
- 83. scfifo Parameter Settings by Entity Instance
- 84. altsyncram Parameter Settings by Entity Instance
- 85. lpm_mult Parameter Settings by Entity Instance
- 86. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5"
- 87. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4"
- 88. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3"
- 89. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2"
- 90. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1"
- 91. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0"
- 92. Port Connectivity Checks: "toplevel:inst|fifo_stream_in_1:fu_INPUT"
- 93. Port Connectivity Checks: "toplevel:inst|fifo_stream_out_1:fu_OUTPUT"
- 94. SignalTap II Logic Analyzer Settings
- 95. Elapsed Time Per Partition
- 96. Connections to In-System Debugging Instance "auto_signaltap_0"
- 97. Analysis & Synthesis Messages
- 98. Analysis & Synthesis Suppressed Messages
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for stream_source_1:inst7|tiny_fifo:inst1|scfifo:scfifo_component|scfifo_6i61:auto_generated|a_dpfifo_i431:dpfifo|altsyncram_ad81:FIFOram
+ 15. Source assignments for stream_source_1:inst7|data_src1:inst|altsyncram:altsyncram_component|altsyncram_sta1:auto_generated
+ 16. Source assignments for dataram:inst1|altsyncram:altsyncram_component|altsyncram_t7t3:auto_generated
+ 17. Source assignments for instrom:inst2|altsyncram:altsyncram_component|altsyncram_otr3:auto_generated
+ 18. Parameter Settings for User Entity Instance: toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU
+ 19. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU
+ 20. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch
+ 21. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH
+ 22. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch
+ 23. Parameter Settings for User Entity Instance: toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1
+ 24. Parameter Settings for User Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL
+ 25. Parameter Settings for User Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch
+ 26. Parameter Settings for User Entity Instance: toplevel:inst|fifo_stream_out_1:fu_OUTPUT
+ 27. Parameter Settings for User Entity Instance: toplevel:inst|fifo_stream_in_1:fu_INPUT
+ 28. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0
+ 29. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_0:rf_BOOL
+ 30. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1
+ 31. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2
+ 32. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3
+ 33. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4
+ 34. Parameter Settings for User Entity Instance: toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5
+ 35. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i1
+ 36. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:lsu_o1
+ 37. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i2
+ 38. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_i1
+ 39. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_o1
+ 40. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:bool_i1
+ 41. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:bool_o1
+ 42. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:gcu_i1
+ 43. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:gcu_i2
+ 44. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:gcu_o1
+ 45. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i1
+ 46. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i2
+ 47. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:ALU_o1
+ 48. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i1
+ 49. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i2
+ 50. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:ADDSH_o1
+ 51. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:MUL_i1
+ 52. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:MUL_i2
+ 53. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:MUL_o1
+ 54. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_0_1_o1
+ 55. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_1_i1
+ 56. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_0_2_o1
+ 57. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_2_i1
+ 58. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_2_1_o1
+ 59. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_1_i1
+ 60. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_2_2_o1
+ 61. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_2_i1
+ 62. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:fifo_u8_stream_out_fifo_u8_stream_out_status_i2
+ 63. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:fifo_u8_stream_out_fifo_u8_stream_out_status_o2
+ 64. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:INPUT_i1
+ 65. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:INPUT_o1
+ 66. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:INPUT_o2
+ 67. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_4_1:RF_5_o1
+ 68. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_5_i1
+ 69. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1
+ 70. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_1
+ 71. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_2
+ 72. Parameter Settings for User Entity Instance: toplevel:inst|toplevel_interconn:ic|toplevel_output_socket_cons_1_1:simm_socket_B1_3
+ 73. Parameter Settings for User Entity Instance: stream_source_1:inst7|tiny_fifo:inst1|scfifo:scfifo_component
+ 74. Parameter Settings for User Entity Instance: stream_source_1:inst7|data_src1:inst|altsyncram:altsyncram_component
+ 75. Parameter Settings for User Entity Instance: stream_source_1:inst7|addr_gen:inst5
+ 76. Parameter Settings for User Entity Instance: dataram:inst1|altsyncram:altsyncram_component
+ 77. Parameter Settings for User Entity Instance: checksum:inst4
+ 78. Parameter Settings for User Entity Instance: instrom:inst2|altsyncram:altsyncram_component
+ 79. Parameter Settings for User Entity Instance: pc_init:inst5
+ 80. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 81. Parameter Settings for Inferred Entity Instance: toplevel:inst|fu_mul_always_2:fu_MUL|mul_arith:fu_arch|lpm_mult:Mult0
+ 82. scfifo Parameter Settings by Entity Instance
+ 83. altsyncram Parameter Settings by Entity Instance
+ 84. lpm_mult Parameter Settings by Entity Instance
+ 85. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5"
+ 86. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4"
+ 87. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3"
+ 88. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2"
+ 89. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1"
+ 90. Port Connectivity Checks: "toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0"
+ 91. Port Connectivity Checks: "toplevel:inst|fifo_stream_in_1:fu_INPUT"
+ 92. Port Connectivity Checks: "toplevel:inst|fifo_stream_out_1:fu_OUTPUT"
+ 93. SignalTap II Logic Analyzer Settings
+ 94. Elapsed Time Per Partition
+ 95. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 96. Analysis & Synthesis Messages
+ 97. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -129,7 +128,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov  4 00:18:30 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov  4 19:08:56 2021       ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; tta                                         ;
 ; Top-level Entity Name              ; tta                                         ;
@@ -612,45 +611,16 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+--------------------------------------------+------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                          ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                                          ; Reason for Removal                                                                                                                                                                                 ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; checksum:inst4|statusreg[1..7]                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; stream_source_1:inst7|fiforeader:inst3|ack_reg                                                                                                                                         ; Merged with stream_source_1:inst7|fiforeader:inst3|dv_reg                                                                                                                                          ;
-; stream_source_1:inst7|fiforeader:inst3|delay2_reg                                                                                                                                      ; Merged with stream_source_1:inst7|fiforeader:inst3|dv_reg                                                                                                                                          ;
-; Total Number of Removed Registers = 9                                                                                                                                                  ;                                                                                                                                                                                                    ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[7] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[7] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[7]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[7]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13..15]                       ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; Total Number of Removed Registers = 20                                                                                                                                                 ;                                                                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                              ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                        ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[15] ; Stuck at GND              ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[14], ;
-;                                                                                                                                                              ; due to stuck port data_in ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13]  ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++---------------------------------------------------+-----------------------------------------------------------+
+; Register name                                     ; Reason for Removal                                        ;
++---------------------------------------------------+-----------------------------------------------------------+
+; checksum:inst4|statusreg[1..7]                    ; Stuck at GND due to stuck port data_in                    ;
+; stream_source_1:inst7|fiforeader:inst3|ack_reg    ; Merged with stream_source_1:inst7|fiforeader:inst3|dv_reg ;
+; stream_source_1:inst7|fiforeader:inst3|delay2_reg ; Merged with stream_source_1:inst7|fiforeader:inst3|dv_reg ;
+; Total Number of Removed Registers = 9             ;                                                           ;
++---------------------------------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -694,106 +664,92 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fifo_stream_out_1:fu_OUTPUT|reg_data[3]                                                                                                               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|o1reg[3]                                                                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|t1reg[8]                                                                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|o1reg[23]                                                                                                   ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|t1reg[6]                                                                                                    ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|addr_reg[2]                                                                                                      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_ifetch:inst_fetch|pc_reg[0]                                                                                                                  ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[20]                                                                                                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|bytemask_reg[0]                                                                                                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|bytemask_reg[2]                                                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_0_rd_opc_reg[2]                                                                                                   ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_ifetch:inst_fetch|return_addr_reg[1]                                                                                                         ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_1_wr_opc_reg[0]                                                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_2_wr_opc_reg[2]                                                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_3_wr_opc_reg[0]                                                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_4_wr_opc_reg[2]                                                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_5_wr_opc_reg[2]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg[0]                                                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_gcu_i1_bus_cntrl_reg[0]                                                                                          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |tta|stream_source_1:inst7|fiforeader:inst3|q_reg[6]                                                                                                                     ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_bool_i1_bus_cntrl_reg[0]                                                                                         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_i1_bus_cntrl_reg[1]                                                                                           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_0_wr_opc_reg[0]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_gcu_i2_bus_cntrl_reg[1]                                                                                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ALU_i2_bus_cntrl_reg[0]                                                                                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ALU_i1_bus_cntrl_reg[1]                                                                                          ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_ALU_opc_reg[3]                                                                                                       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ADDSH_i1_bus_cntrl_reg[0]                                                                                        ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_ADDSH_opc_reg[1]                                                                                                     ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ADDSH_i2_bus_cntrl_reg[0]                                                                                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_0_1_i1_bus_cntrl_reg[0]                                                                                       ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_1_rd_opc_reg[1]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_0_2_i1_bus_cntrl_reg[0]                                                                                       ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_2_rd_opc_reg[0]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_2_1_i1_bus_cntrl_reg[0]                                                                                       ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_3_rd_opc_reg[2]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_2_2_i1_bus_cntrl_reg[1]                                                                                       ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_4_rd_opc_reg[0]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_5_i1_bus_cntrl_reg[0]                                                                                         ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_5_rd_opc_reg[0]                                                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_MUL_i1_bus_cntrl_reg[1]                                                                                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_MUL_i2_bus_cntrl_reg[1]                                                                                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_lsu_i1_bus_cntrl_reg[0]                                                                                          ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_LSU_opc_reg[2]                                                                                                       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_lsu_i2_bus_cntrl_reg[1]                                                                                          ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[8]                                                                                                        ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[6]                                                                                                        ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[2]                                                                                                  ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[18]                                                                                                 ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[11]                                                                                                 ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[26]                                                                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_mul_always_2:fu_MUL|t1reg[0]                                                                                                                       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_mul_always_2:fu_MUL|o1reg[0]                                                                                                                       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|Mux30                                                                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][20]                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_i1|Mux4                                                                                         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i2|Mux29                                                                                       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i2|Mux9                                                                                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_1_i1|Mux30                                                                                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_2_i1|Mux28                                                                                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_1_i1|Mux22                                                                                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_2_i1|Mux16                                                                                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_5_i1|Mux2                                                                                       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i2|Mux25                                                                                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i1|Mux6                                                                                        ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0|Mux8                                                                                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][24]                    ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1|Mux30                                                                                                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2|Mux6                                                                                                            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3|Mux27                                                                                                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4|Mux21                                                                                                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5|Mux21                                                                                                           ;
-; 5:1                ; 24 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg                                                                                                     ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][28]                    ;
-; 20:1               ; 3 bits    ; 39 LEs        ; 24 LEs               ; 15 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux27      ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux28      ;
-; 16:1               ; 7 bits    ; 70 LEs        ; 63 LEs               ; 7 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux21      ;
-; 15:1               ; 7 bits    ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux14      ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux6       ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux3       ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[13]                               ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[5]                                ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[9]         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_len_reg[18]                                     ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[1]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[3]                   ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[1]                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |tta|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                     ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0]                                                               ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                                                                                           ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[0]                                                                                    ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |tta|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fifo_stream_out_1:fu_OUTPUT|reg_data[3]                                                                                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|o1reg[3]                                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|t1reg[8]                                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|o1reg[23]                                                                                              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|t1reg[6]                                                                                               ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|addr_reg[2]                                                                                                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_ifetch:inst_fetch|pc_reg[0]                                                                                                             ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[20]                                                                                                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|bytemask_reg[0]                                                                                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|bytemask_reg[2]                                                                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_0_rd_opc_reg[2]                                                                                              ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_ifetch:inst_fetch|return_addr_reg[1]                                                                                                    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_1_wr_opc_reg[0]                                                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_2_wr_opc_reg[2]                                                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_3_wr_opc_reg[0]                                                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_4_wr_opc_reg[2]                                                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_5_wr_opc_reg[2]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_fifo_u8_stream_out_fifo_u8_stream_out_status_i2_bus_cntrl_reg[0]                                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_gcu_i1_bus_cntrl_reg[0]                                                                                     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |tta|stream_source_1:inst7|fiforeader:inst3|q_reg[6]                                                                                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_bool_i1_bus_cntrl_reg[0]                                                                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_i1_bus_cntrl_reg[1]                                                                                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_0_wr_opc_reg[0]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_gcu_i2_bus_cntrl_reg[1]                                                                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ALU_i2_bus_cntrl_reg[0]                                                                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ALU_i1_bus_cntrl_reg[1]                                                                                     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_ALU_opc_reg[3]                                                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ADDSH_i1_bus_cntrl_reg[0]                                                                                   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_ADDSH_opc_reg[1]                                                                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_ADDSH_i2_bus_cntrl_reg[0]                                                                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_0_1_i1_bus_cntrl_reg[0]                                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_1_rd_opc_reg[1]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_0_2_i1_bus_cntrl_reg[0]                                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_2_rd_opc_reg[0]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_2_1_i1_bus_cntrl_reg[0]                                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_3_rd_opc_reg[2]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_2_2_i1_bus_cntrl_reg[1]                                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_4_rd_opc_reg[0]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_RF_5_i1_bus_cntrl_reg[0]                                                                                    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|rf_RF_5_rd_opc_reg[0]                                                                                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_MUL_i1_bus_cntrl_reg[1]                                                                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_MUL_i2_bus_cntrl_reg[1]                                                                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_lsu_i1_bus_cntrl_reg[0]                                                                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|fu_LSU_opc_reg[2]                                                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tta|toplevel:inst|toplevel_decoder:inst_decoder|socket_lsu_i2_bus_cntrl_reg[1]                                                                                     ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[8]                                                                                                   ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|r1_reg[6]                                                                                                   ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[2]                                                                                             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[18]                                                                                            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[11]                                                                                            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg[26]                                                                                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_mul_always_2:fu_MUL|t1reg[0]                                                                                                                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |tta|toplevel:inst|fu_mul_always_2:fu_MUL|o1reg[0]                                                                                                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|Mux30                                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][20]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_i1|Mux4                                                                                    ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ALU_i2|Mux29                                                                                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:ADDSH_i2|Mux9                                                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_1_i1|Mux30                                                                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_0_2_i1|Mux28                                                                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_1_i1|Mux22                                                                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_2_2_i1|Mux16                                                                               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:RF_5_i1|Mux2                                                                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i2|Mux25                                                                                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|toplevel_interconn:ic|toplevel_input_socket_cons_4:lsu_i1|Mux6                                                                                   ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_0|Mux8                                                                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][24]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_1|Mux30                                                                                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_2|Mux6                                                                                                       ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_3|Mux27                                                                                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_4|Mux21                                                                                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|rf_1wr_1rd_always_1_guarded_1:rf_RF_5|Mux21                                                                                                      ;
+; 5:1                ; 24 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_lsu_with_bytemask_always_3:fu_LSU|data_out_reg                                                                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |tta|toplevel:inst|fu_add_shl_shr_shru_sub_always_1:fu_ADDSH|add_shl_shr_shru_sub_arith:fu_arch|shl_shr_shru_arith:shl_shr_shru_arith_1|y_temp[5][28]               ;
+; 20:1               ; 3 bits    ; 39 LEs        ; 24 LEs               ; 15 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux27 ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux28 ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 63 LEs               ; 7 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux21 ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux14 ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux6  ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |tta|toplevel:inst|fu_add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_always_1:fu_ALU|add_and_eq_gt_gtu_ior_shl_shr_shru_sub_sxhw_sxqw_xor_arith:fu_arch|Mux3  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2037,15 +1993,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+-----------------------------------------------+
-; Elapsed Time Per Partition                    ;
-+--------------------------------+--------------+
-; Partition Name                 ; Elapsed Time ;
-+--------------------------------+--------------+
-; Top                            ; 00:00:16     ;
-; sld_signaltap:auto_signaltap_0 ; 00:00:02     ;
-; sld_hub:auto_hub               ; 00:00:00     ;
-+--------------------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:16     ;
++----------------+--------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2220,7 +2174,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Nov  4 00:17:51 2021
+    Info: Processing started: Thu Nov  4 19:08:22 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tta -c tta
 Info (20029): Only one processor detected - disabling parallel compilation
 Info (12021): Found 4 design units, including 1 entities, in source file /home/user/ASSP_2021/fir/hdl_files/vhdl/util_pkg.vhdl
@@ -2619,15 +2573,6 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register toplevel:inst|toplevel_ifetch:inst_fetch|reset_cntr[0] will power up to Low
     Critical Warning (18010): Register toplevel:inst|toplevel_ifetch:inst_fetch|reset_cntr[31] will power up to Low
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
-Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (144001): Generated suppressed messages file /home/user/ASSP_2021/fir/quartus/output_files/tta.map.smsg
 Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 158 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -2638,11 +2583,11 @@ Info (21057): Implemented 7959 device resources after synthesis - the final reso
     Info (21061): Implemented 7636 logic cells
     Info (21064): Implemented 306 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 461 megabytes
-    Info: Processing ended: Thu Nov  4 00:18:30 2021
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:00:28
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 466 megabytes
+    Info: Processing ended: Thu Nov  4 19:08:56 2021
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

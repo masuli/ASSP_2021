@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for tta
-Thu Nov  4 00:19:54 2021
+Thu Nov  4 19:10:11 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -2214,7 +2214,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Nov  4 00:19:38 2021
+    Info: Processing started: Thu Nov  4 19:09:56 2021
 Info: Command: quartus_sta tta -c tta
 Info: qsta_default_script.tcl version: #1
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -2307,9 +2307,9 @@ Info (332146): Worst-case minimum pulse width slack is 49.470
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 436 megabytes
-    Info: Processing ended: Thu Nov  4 00:19:54 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 425 megabytes
+    Info: Processing ended: Thu Nov  4 19:10:11 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:05
 
 
